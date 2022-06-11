@@ -7,6 +7,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div> Developer Discovery ! </div>
+
+        <div class="question"> Question Section</div>
         <button> item1 </button>
         <button> item2 </button>
       </header>
