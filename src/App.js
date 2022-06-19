@@ -8,15 +8,30 @@ function App() {
     const data = await API.get('developer-discovery','/api/questions')
   }
 
+  const onSubmit = () => {
+    alert('submit');
+  }
+
+  const onKeyup = (event) => {
+    if (event.keyCode === 13) {
+      onSubmit();
+    }
+    console.log('keyup')
+  }
+
+  let item1 = 'item1';
+  let item2 = 'item2';
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div> Developer Discovery ! </div>
 
+        <input onKeyUp={onKeyup}></input>
         <div class="question"> Question Section</div>
-        <button> item1 </button>
-        <button> item2 </button>
+        <button> {item1} </button>
+        <button> {item2} </button>
       </header>
     </div>
   );
