@@ -6,12 +6,12 @@ class NameModal extends Component {
     render() {
         const { nameModal } = this.props;
 
-        componentDidMount() {
+        componentDidMount =()=> {
             body.setAttribute("style", "overflow: hidden;");
             this.setState({status: true});
         }
 
-        componentWillUnmount() {
+        componentWillUnmount =()=> {
             body.setAttribute("style");
             this.setState({status: false});
         }
