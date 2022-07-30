@@ -1,23 +1,8 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import API from '@aws-amplify/api';
-import NameModal from './NameModal';
 
 function App() {
-  // question 리스트에 대한 정보 api 구성 후 출력하는 컴포넌트 제작
-  async function getQuestion() {
-    const data = await API.get('developer-discovery','/api/questions')
-  }
-  state = { NameModal: null }
-
-  onNameClick = (nameModal) => {
-    this.setState({ nameModalStatus: true, nameModal });
-  }
-
-  modalOff = () => {
-    this.setState({ nameModalStatus: false, nameModal: null })
-  }
 
   const [text, setText] = useState('state')
   const updateAnswers = () => {
@@ -49,10 +34,9 @@ function App() {
 
         <input onKeyUp={onKeyup}></input>
         <div class="question"> Question Section</div>
-        <button onClick = {updateAnswers}> answer load! </button>
+        <button onClick={updateAnswers}> answer load! </button>
         <button> {text} </button>
         <button> {item2} </button>
-        {this.state.storyModalStatus && <NameModal nameModal={this.state.nameModal} /> }
       </header>
     </div>
   );
