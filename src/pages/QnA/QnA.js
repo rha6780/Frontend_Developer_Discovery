@@ -1,4 +1,4 @@
-import '../../asset/css/base.css';
+import '../../asset/css/QnA.css';
 
 export default function QnA() {
 
