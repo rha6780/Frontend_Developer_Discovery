@@ -1,6 +1,6 @@
 import logo from '../../asset/image/logo.svg';
 import '../../asset/css/base.css';
-import { Link } from '@aws-amplify/ui-react';
+import { Link } from 'react-router-dom';
 
 
 export default function Main() {
@@ -10,9 +10,9 @@ export default function Main() {
                 <img src={logo} className="Main-logo" alt="logo" />
                 <div> Developer Discovery ! </div>
 
-                {/* <Link to="/QnA"> TODO: Route 설정하기*/}
-                <button> 시작하기 </button>
-                {/* </Link> */}
+                <Link to="/QnA">
+                    <button> 시작하기 </button>
+                </Link>
             </header>
         </div>
 

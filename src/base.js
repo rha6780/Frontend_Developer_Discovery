@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import './asset/css/base.css';
-import { Link, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import { Main } from './pages';
+import { Route, HashRouter as Router } from 'react-router-dom';
+import { Main, QnA } from './pages';
 
 class Base extends Component {
 
     render() {
         return (
             <Router>
-                <Switch>
-                    <Route path="/" element={<Main />} />
-                </Switch>
-                <Link to="/QnA">
-                    <button> 시작하기 </button>
-                </Link>
+                <Route path="/" exact component={Main} />
+                <Route path="/QnA" component={QnA} />
             </Router>
         );
     }
