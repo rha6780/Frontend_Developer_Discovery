@@ -1,5 +1,5 @@
-import logo from '../asset/image/logo.svg';
-import '../asset/css/base.css';
+import logo from '../../asset/image/logo.svg';
+import '../../asset/css/base.css';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 

@@ -1,5 +1,5 @@
-import home_icon from '../asset/image/home_icon.png';
-import '../asset/css/navBar.css';
+import home_icon from '../../asset/image/home_icon.png';
+import '../../asset/css/navBar.css';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 

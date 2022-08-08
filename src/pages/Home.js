@@ -1,5 +1,5 @@
-import { NavBar, Main } from '../../components';
-import '../../asset/css/base.css';
+import { NavBar, Main } from '../components';
+import '../asset/css/base.css';
 
 
 function Home() {
