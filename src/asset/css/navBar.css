@@ -1,9 +1,11 @@
 .navBar {
     text-align: left;
+    float: left;
   }
   
   .nav-item {
     background-color: #282c34;
+    margin: 10px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
