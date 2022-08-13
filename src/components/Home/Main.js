@@ -23,8 +23,7 @@ class Main extends Component {
                     </div>
                     <div className="sub-area">
                         <div className="sub-title">진행 방식</div>
-                        <div> Developer Discovery 는 다양한 직군에서 발생하는 상황을 토대로 해결방법을 선택합니다.</div>
-                        <div> 자신이 선택한 결과에 따라 어떤 성향을 가지고 특정 직군에서 장점과 단점을 확인합니다.</div>
+                        <div> 질문에 따라서 더 가까운 선택지를 클릭하세요!</div>
                     </div>
                     <Link to="/QnA">
                         <button className="start-btn"> 시작하기 </button>
