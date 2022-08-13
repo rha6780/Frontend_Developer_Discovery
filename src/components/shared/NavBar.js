@@ -6,20 +6,20 @@ import { Component } from 'react';
 class NavBar extends Component {
     render() {
         return (
-            <div className="NavBar" class="navBar">
-                <Link to="/" class="link">
-                    <div class="nav-item">
+            <div className="navBar">
+                <Link to="/" className="link">
+                    <div className="nav-item">
                         <img src={home_icon} id="bar-icon" alt="home" />
                     </div>
                 </Link>
-                <Link to="/QnA" class="link">
-                    <div class="nav-item">
-                        QnA List
+                <Link to="/QnA" className="link">
+                    <div className="nav-item">
+                        QnA
                     </div>
                 </Link>
-                <Link to="/" class="link">
-                    <div class="nav-item">
-                        Result List
+                <Link to="/" className="link">
+                    <div className="nav-item">
+                        Result
                     </div>
                 </Link>
             </div>
