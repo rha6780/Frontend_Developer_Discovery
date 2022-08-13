@@ -9,7 +9,8 @@ class NavBar extends Component {
             <div className="navBar">
                 <Link to="/" className="link">
                     <div className="nav-item">
-                        <img src={home_icon} id="bar-icon" alt="home" />
+                        {/* <img src={home_icon} id="bar-icon" alt="home" /> */}
+                        D:D
                     </div>
                 </Link>
                 <Link to="/QnA" className="link">

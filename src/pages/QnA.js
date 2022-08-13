@@ -11,8 +11,10 @@ export default function QnA() {
     return (
         <div>
             <NavBar />
-            <Question />
-            <Answer />
+            <div className="content">
+                <Question />
+                <Answer />
+            </div>
         </div>
     );
 }
