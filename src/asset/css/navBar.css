@@ -1,22 +1,35 @@
+
+
 .navBar {
-    text-align: left;
-    float: left;
+    text-align: center;
+    display: flex;
+    line-height: 45x;
+    align-items: center;
   }
   
   .nav-item {
-    background-color: #282c34;
-    margin: 10px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    margin: 5px;
+    padding: 15px;
+    font-size: calc(25px);
+    color: black;
+    max-width: 40px;
+    max-height: 20px;
+    display: inline;
     align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  }
+  
+  .nav-item:hover {
+    color: lightblue;
   }
   
   .link {
-    color: #61dafb;
+    text-decoration: none;
   }
 
+  #bar-icon {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+  }
+  
   
