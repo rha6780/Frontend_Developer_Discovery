@@ -12,6 +12,10 @@
     padding-top: 60px;
     color: white;
   }
+
+  .qna-divider {
+    margin-bottom: 50px;
+  }
   
   .question {
     width: 100%;

@@ -12,7 +12,9 @@ export default function QnA() {
         <div>
             <NavBar />
             <div className="content">
-                <Question />
+                <div className="qna-divider">
+                    <Question />
+                </div>
                 <Answer />
             </div>
         </div>
