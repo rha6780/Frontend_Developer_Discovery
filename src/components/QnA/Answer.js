@@ -5,7 +5,7 @@ class Answer extends Component {
     render() {
         return (
             <div className="answer">
-                <div>답변 1</div>
+                <button className="question-btn">답변1</button>
             </div>
 
         );
