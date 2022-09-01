@@ -1,5 +1,8 @@
 import { NavBar, Question, Answer } from '../components';
 import '../asset/css/QnA.css';
+import { getQuestions } from '../api/question_api';
+
+// const [questionList] = getQuestions();
 
 export default function QnA() {
 
@@ -13,7 +16,7 @@ export default function QnA() {
             <NavBar />
             <div className="content">
                 <div className="qna-divider">
-                    <Question />
+                    {/* <Question /> */}
                 </div>
                 <Answer />
             </div>
