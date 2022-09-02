@@ -1,5 +1,4 @@
 import '../../asset/css/QnA.css';
-import { Component } from 'react';
 
 interface QuestionProps {
     id: number

@@ -1,8 +1,8 @@
 import { NavBar, Question, Answer } from '../components';
 import '../asset/css/QnA.css';
-import { getQuestions } from '../api/question_api';
+import { getQuestions } from '../api/question_api.tsx';
 
-// const [questionList] = getQuestions();
+const [questionList] = getQuestions();
 
 export default function QnA() {
 
