@@ -2,9 +2,10 @@ import '../../asset/css/QnA.css';
 import { Component } from 'react';
 
 interface QuestionProps {
-    id: number;
-    content: string;
+    id: number
+    content: string
 }
+
 
 const Question = () => {
 

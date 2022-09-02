@@ -2,7 +2,7 @@ import { NavBar, Main } from '../components';
 import '../asset/css/base.css';
 
 
-function Home() {
+export default function Home() {
     return (
         <div>
             <NavBar />
@@ -12,5 +12,3 @@ function Home() {
         </div>
     );
 }
-
-export default Home;

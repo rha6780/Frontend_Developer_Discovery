@@ -6,17 +6,12 @@ import { getQuestions } from '../api/question_api';
 
 export default function QnA() {
 
-    // this.setState({
-    //     answer: "답변 1",
-    //     question: "질문 1"
-    // })
-
     return (
         <div>
             <NavBar />
             <div className="content">
                 <div className="qna-divider">
-                    {/* <Question /> */}
+                    <Question />
                 </div>
                 <Answer />
             </div>

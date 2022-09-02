@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './asset/css/base.css';
 import { Route, HashRouter as Router } from 'react-router-dom';
-import { Home, QnA } from './pages';
+import { Home, QnA } from './pages/index';
 
-class Base extends Component {
+export default class Base extends Component {
 
     render() {
         return (
@@ -14,5 +14,3 @@ class Base extends Component {
         );
     }
 }
-
-export default Base;

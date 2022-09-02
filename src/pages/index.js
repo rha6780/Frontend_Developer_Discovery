@@ -1,2 +1,2 @@
-export { default as Home } from './Home';
-export { default as QnA } from './QnA';
+export { default as Home } from './Home.js';
+export { default as QnA } from './QnA.js';
