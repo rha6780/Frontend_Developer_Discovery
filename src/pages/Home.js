@@ -1,4 +1,4 @@
-import { NavBar, Main } from '../components';
+import { NavBar, Main, Graph } from '../components';
 import '../asset/css/base.css';
 
 
@@ -8,6 +8,7 @@ export default function Home() {
             <NavBar />
             <div className="Main">
                 <Main />
+                <Graph />
             </div>
         </div>
     );
