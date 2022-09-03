@@ -2,7 +2,7 @@ import { NavBar, Main, Graph } from '../components';
 import '../asset/css/base.css';
 
 
-export default function Home() {
+const Home = () => {
     return (
         <div>
             <NavBar />
@@ -13,3 +13,5 @@ export default function Home() {
         </div>
     );
 }
+
+export default Home;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './asset/css/base.css';
 import { Route, HashRouter as Router } from 'react-router-dom';
-import { Home, QnA } from './pages/index';
+import { Home, QnA } from './pages/index.js';
 
 export default class Base extends Component {
 
