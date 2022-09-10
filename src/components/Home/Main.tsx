@@ -1,6 +1,5 @@
 import '../../asset/css/base.css';
 import { Link } from 'react-router-dom';
-import { Component } from 'react';
 
 const Main = () => {
     return (
@@ -10,8 +9,7 @@ const Main = () => {
                 <h1 className="project-title"> <span className="upper-case">D</span>eveloper <span className="upper-case">D</span>iscovery </h1>
 
                 <div className="sub-area">
-                    <div className="sub-title">주의</div>
-                    <div>환경에 따라서 동일 직군이라도 경험하는 바가 다르기 때문에 해당 결과에 대한 성급한 일반화는 지양해주시기 바랍니다. (재미로 봐주세요)</div>
+                    <div>개발자라면 한번 쯤 생각해볼 주제로 재미로 봐주세요</div>
 
                 </div>
                 <div className="sub-area">
