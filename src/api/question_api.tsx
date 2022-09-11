@@ -12,6 +12,6 @@ const client = axios.create({
 export const getQuestions = async () => {
     const { data } = await client.get<Question[]>("main/question/1");
 
-    return data;
+    return { data };
 };
 
