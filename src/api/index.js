@@ -1,1 +1,1 @@
-export * from './question_api.tsx';
+export { default as getQuestions } from './question_api.tsx';

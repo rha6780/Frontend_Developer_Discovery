@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { Question } from '../models/Question'
+import { QuestionState } from '../models/Question'
 
 const client = axios.create({
     baseURL: "http://127.0.0.1:8000",
@@ -9,13 +9,14 @@ const client = axios.create({
     },
 });
 
-export const getQuestions = async () => {
+const getQuestions = async () => {
     try {
-        const result = await client.get<Question>("main/question/1");
-
-        return result;
+        const result = await client.get<QuestionState>("main/question/1");
+        // console.log(result.data);
+        return result.data;
     } catch (error) {
         console.log(error)
     }
 };
 
+export default getQuestions;
