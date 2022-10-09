@@ -13,17 +13,14 @@ const Question = () => {
         };
 
         initQuestion();
-        // console.log(question);
     }, []);
 
-    console.log(questions)
     return (
         <div className="question" >
-            <div>질문 1</div>
-            {/* <div>{questions.map(question => (
-                <li>{question.id}</li>
-            ))}</div> */}
-
+            {<div>{
+                questions?.map(question => (
+                    <div key={question.id}>{question.content}</div>))
+            }</div>}
         </div>
 
     );
