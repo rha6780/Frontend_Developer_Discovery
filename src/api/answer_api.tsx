@@ -9,9 +9,9 @@ const client = axios.create({
     },
 });
 
-const getAnswers = async () => {
+const getAnswers = async (id) => {
     try {
-        const result = await client.get<AnswerState>("/main/answer/1");
+        const result = await client.get<AnswerState>(`/main/answer/${id}`);
         return result.data;
     } catch (error) {
         console.log(error)

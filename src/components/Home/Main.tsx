@@ -15,7 +15,7 @@ const Main = () => {
                 <div className="sub-area">
                     <div className="sub-title">언어 영역</div>
                 </div>
-                <Link to="/QnA">
+                <Link to="/QnA/1">
                     <button className="start-btn"> 시작하기 </button>
                 </Link>
             </header>

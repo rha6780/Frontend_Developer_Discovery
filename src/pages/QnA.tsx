@@ -4,16 +4,17 @@ import '../asset/css/QnA.css';
 
 // const questionList = () => getQuestions();
 
-const QnA = () => {
+const QnA = (props) => {
+    const question_id = props.match.params.id
 
     return (
         <div>
             <NavBar />
             <div className="content">
                 <div className="qna-divider">
-                    <Question />
+                    <Question id={question_id} />
                 </div>
-                <Answer />
+                <Answer id={question_id} />
             </div>
         </div>
     );
