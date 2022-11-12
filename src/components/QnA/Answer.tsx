@@ -8,6 +8,7 @@ const Answer = (props) => {
     const [answers, setAnswer] = useState<AnswerState[]>();
     const question_id = props.id;
     const next_url = `/QnA/${parseInt(question_id) + 1}`
+    // TODO: url을 통한 이동이 아닌 리스트 api를 통해 rendering되는 데이터만 바꾸도록 수정
 
     useEffect(() => {
         const initAnswer = async () => {
