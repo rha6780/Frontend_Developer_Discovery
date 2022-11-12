@@ -11,7 +11,7 @@ const client = axios.create({
 
 const getQuestions = async (id) => {
     try {
-        const result = await client.get<QuestionState>(`main/question/${id}`);
+        const result = await client.get<QuestionState>(`v1/questions/${id}`);
         // console.log(result.data);
         return result.data;
     } catch (error) {
