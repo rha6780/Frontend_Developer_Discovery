@@ -6,6 +6,7 @@ import { getQuestionsList } from '../../api/index';
 
 const Card = (props) => {
     const category = props.category;
+    const question_id = useState(1);
     const [questions_list, setQuestionList] = useState<QuestionState[]>();
 
     useEffect(() => {
