@@ -10,7 +10,7 @@ export default class Base extends Component {
             <Router>
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/QnA/:id" component={QnA} />
+                    <Route path="/QnA/:category" component={QnA} />
                     <Route path="*" component={Error} />
                 </Switch>
             </Router>

@@ -9,7 +9,6 @@ const Question = (props) => {
     const question_id = props.id;
     const history = useHistory();
 
-
     useEffect(() => {
         const initQuestion = async () => {
             const questions = await getQuestions(question_id);
@@ -24,7 +23,7 @@ const Question = (props) => {
     }, [question_id]);
 
     return (
-        <div className="question" >
+        <div className="question" key={'question' + question_id}>
             {<div>{
                 questions?.map(question => (
                     <div key={question.id}>{question.content}</div>))
