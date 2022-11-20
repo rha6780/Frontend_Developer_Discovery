@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../asset/css/QnA.css';
 import { AnswerState } from '../../models/Answer';
-import { getAnswers, getAnswersList } from '../../api/index';
-import { Link } from 'react-router-dom';
+import { getAnswers } from '../../api/index';
 
 const Answer = (props) => {
     const [answers, setAnswer] = useState<AnswerState[]>();
@@ -26,9 +25,7 @@ const Answer = (props) => {
             <div>
                 {<div>{
                     answers?.map(answer => (
-                        <Link to={next_url} key={answer.id} >
-                            <button key={answer.id} className="question-btn">{answer.content}</button>
-                        </Link>
+                        <button key={answer.id} className="question-btn">{answer.content}</button>
                     ))
                 }</div>}
             </div>

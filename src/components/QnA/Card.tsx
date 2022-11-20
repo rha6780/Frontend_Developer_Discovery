@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Answer, Question } from '..';
 import '../../asset/css/QnA.css';
-import { QuestionState, QuestionListState } from '../../models/Question';
+import { QuestionState } from '../../models/Question';
 import { getQuestionsList } from '../../api/index';
-import { Divider } from '@aws-amplify/ui-react';
 
 const Card = (props) => {
     const category = props.category;
