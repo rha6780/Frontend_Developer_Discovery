@@ -18,13 +18,38 @@ const Card = (props) => {
         initQuestion();
     }, [category]);
 
+    questions_list?.map(answer => (
+        console.log(answer)
+    ));
+
+    function nextCard() {
+        console.log(question_id)
+        question_id += 1;
+    };
+
     return (
         <div className="qnaCard">
             {<div>{
                 questions_list?.map((item: QuestionState) => (
                     <div key={'divider' + item.id} className="qna-divider">
-                        <Question id={item.id} />
-                        <Answer id={item.id} />
+                        {/* <Question id={item.id} /> */}
+                        {/* <Answer id={item.id} /> */}
+                        <div className="question" key={'question' + question_id}>
+                            {<div>
+                                {questions_list?.map(question => (
+                                    <div key={question.id}>{question.content}</div>
+                                ))}
+                            </div>}
+                        </div>
+                        <div className="answer" key={'answer' + question_id}>
+                            <div>
+                                {<div>
+                                    {questions_list?.map(answer => (
+                                        <button key={answer.id} className="question-btn" onClick={() => nextCard()}> {answer.content}</button>
+                                    ))}
+                                </div>}
+                            </div>
+                        </div >
                     </div>
                 ))
             }</div>}

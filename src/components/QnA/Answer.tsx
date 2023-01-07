@@ -8,14 +8,7 @@ const Answer = (props) => {
     let question_id = props.id;
     // TODO: url을 통한 이동이 아닌 리스트 api를 통해 rendering되는 데이터만 바꾸도록 수정
 
-    useEffect(() => {
-        const initAnswer = async () => {
-            const answers = await getAnswers(question_id);
-            setAnswer(answers);
-        };
-
-        initAnswer();
-    }, [question_id]);
+    useEffect(() => { }, [question_id]);
 
     function nextQuestion() {
         console.log(question_id)
