@@ -1,5 +1,5 @@
 export interface UserState {
     id: number;
-    category: string;
-    content: string;
+    name: string;
+    email: string;
 }

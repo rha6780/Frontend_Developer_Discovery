@@ -1,7 +1,22 @@
+import React, { useEffect, useState } from 'react';
 import '../../asset/css/navBar.css';
 import { Link } from 'react-router-dom';
+import { UserState } from '../../models/User';
+import { userCurrent } from '../../api/index';
 
 const NavBar = () => {
+    const [user, setUser] = useState<UserState>();
+
+    useEffect(() => {
+        const initQuestion = async () => {
+            const user = await userCurrent();
+            setUser(user);
+            console.log(user)
+        };
+
+        initQuestion();
+    }, []);
+
     return (
         <div className="navBar">
             <Link to="/" className="link">
@@ -10,6 +25,7 @@ const NavBar = () => {
                     D:D
                 </div>
             </Link>
+            <div>{ }</div>
         </div>
     );
 }
