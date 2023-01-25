@@ -1,4 +1,3 @@
-import '../../asset/css/QnA.css';
 
 const NotFound = () => {
     return (

@@ -8,16 +8,9 @@ const Main = () => {
 
                 <h1 className="project-title"> <span className="upper-case">D</span>eveloper <span className="upper-case">D</span>iscovery </h1>
 
-                <div className="sub-area">
-                    <div>개발자라면 한번 쯤 생각해볼 주제로 더 마음에 드는 것을 선택해주세요</div>
 
-                </div>
-                <div className="sub-area">
-                    <div className="sub-title">언어 영역</div>
-                </div>
-                <Link to="/QnA/language">
-                    <button className="start-btn"> 시작하기 </button>
-                </Link>
+                <a href="http://127.0.0.1:8000/accounts/login/github" className="start-btn"> github 로그인 </a>
+
             </header>
         </div >
 

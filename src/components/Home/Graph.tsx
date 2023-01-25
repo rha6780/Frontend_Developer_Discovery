@@ -1,4 +1,3 @@
-import '../../asset/css/QnA.css';
 
 const Graph = () => {
     return (
