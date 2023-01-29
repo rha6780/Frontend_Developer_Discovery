@@ -15,5 +15,6 @@ COPY package-lock.json .
 RUN npm ci
 RUN npm install react-scripts@4.0.0 -g --silent
 
-COPY ./public/index.html .
+COPY src ./src
+COPY public ./public
 
