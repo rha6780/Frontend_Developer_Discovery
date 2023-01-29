@@ -1,7 +1,6 @@
 # Frontend Developer Discovery
 - [Backend 프로젝트](https://github.com/rha6780/Backend_Developer_Discovery) 의 API를 받아 프론트를 구성합니다.
-- AWS Amplify 에 배포를 진행하고, API는 EC2 또는 Lambda에 배포하여서 연결합니다.
-- 참고하는 책 '풀스택 서버리스'에 따라서 리액트로 구성합니다.
+- SSR 방식으로 구성되고 별도의 node 서버가 존재합니다.
 
 <br>
 
