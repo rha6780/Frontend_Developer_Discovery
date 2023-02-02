@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './asset/css/base.css';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
-import { Home, Error } from './pages/index.js';
+import Home from './index';
+import Error from './Error';
 
 export default class Base extends Component {
 

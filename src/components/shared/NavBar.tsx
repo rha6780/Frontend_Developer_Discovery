@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import '../../asset/css/navBar.css';
 import { Link } from 'react-router-dom';
 import { UserState } from '../../models/User';
-import { userCurrent } from '../../api/index';
+import { userCurrent } from '../../pages/api/index';
 
 const NavBar = () => {
     const [user, setUser] = useState<UserState>();

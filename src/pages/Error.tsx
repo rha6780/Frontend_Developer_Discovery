@@ -1,5 +1,5 @@
-import { NavBar, NotFound } from '../components';
-import '../asset/css/base.css';
+import NavBar from '../components/shared/NavBar';
+import NotFound from '../components/Error/NotFound';
 
 
 const Error = () => {

@@ -1,11 +1,12 @@
-import { NavBar, Main, Graph } from '../components';
-import '../asset/css/base.css';
+import NavBar from '../components/shared/NavBar';
+import Main from '../components/Home/Main';
+import Graph from '../components/Home/Graph';
 
 
 const Home = () => {
     return (
         <div>
-            <NavBar />
+            {/* <NavBar /> */}
             <div className="Main">
                 <Main />
                 <Graph />
