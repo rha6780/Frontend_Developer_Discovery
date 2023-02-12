@@ -1,3 +1,4 @@
+import styles from '../../../styles/Navbar.module.css'
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { UserState } from '../../models/User';
@@ -17,10 +18,10 @@ const NavBar = () => {
     }, []);
 
     return (
-        <div className="navBar">
-            <Link href="/" className="link">
+        <div className={styles.navBar}>
+            <Link href="/" className={styles.link}>
                 {/* <img src={home_icon} id="bar-icon" alt="home" /> */}
-                D:D
+                Developer Discovery
             </Link>
             <div>{ }</div>
         </div>
