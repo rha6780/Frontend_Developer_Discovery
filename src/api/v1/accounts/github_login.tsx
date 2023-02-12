@@ -1,5 +1,5 @@
 import { ApiClient } from '../../index';
-import { UserState } from '../../../models/User'
+import { UserState } from '../../../models/User';
 
 
 const githubLogin = async () => {

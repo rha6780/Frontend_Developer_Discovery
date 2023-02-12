@@ -18,3 +18,9 @@ RUN npm install react-scripts@4.0.0 -g --silent
 COPY src ./src
 COPY public ./public
 
+EXPOSE 3000
+
+ENV PORT 3000
+
+CMD ["npm", "start"]
+

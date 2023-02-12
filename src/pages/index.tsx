@@ -6,7 +6,7 @@ import Graph from '../components/Home/Graph';
 const Home = () => {
     return (
         <div>
-            {/* <NavBar /> */}
+            <NavBar />
             <div className="Main">
                 <Main />
                 <Graph />
