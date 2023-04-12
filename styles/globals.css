@@ -86,13 +86,16 @@ body {
 }
 
 body {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Roboto Mono", 'Oxygen Mono', monospace;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    ) */
+    /* rgb(var(--background-start-rgb)); */
 }
 
 a {
