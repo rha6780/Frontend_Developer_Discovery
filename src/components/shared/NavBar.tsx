@@ -21,7 +21,11 @@ const NavBar = () => {
         <div className={styles.navBar}>
             <Link href="/" className={styles.link}>
                 {/* <img src={home_icon} id="bar-icon" alt="home" /> */}
-                Developer Discovery
+                <div>
+                    <span className={styles.uppercase}>D</span>
+                    eveloper
+                    <span className={styles.uppercase}>D</span>iscovery
+                </div>
             </Link>
             <div>{ }</div>
         </div>
