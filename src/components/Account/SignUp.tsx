@@ -1,4 +1,4 @@
-import styles from '../../../styles/Main.module.css'
+import styles from '../../../styles/Account.module.css'
 import Image from "next/image";
 import { Link } from 'react-router-dom';
 import { signUp } from '@/api/v1/accounts/signup';
@@ -23,19 +23,29 @@ export const SignUp = () => {
     }
 
     return (
-        <div>
-            <div className={styles.main_body}>
+        <div className={styles.signup}>
+            <div className={styles.title}>Developer Discovery</div>
+            <div className={styles.body}>
                 <form method="post" onSubmit={signUpSubmit}>
-                    <label> 아이디 </label>
-                    <input type="text" name="username" id="username" placeholder="username"></input>
-
-                    <label> 이름 </label>
-                    <input type="text" name="name" id="name" placeholder="name"></input>
-
-                    <label> 비밀번호 </label>
-                    <input type="password" name="password" id="password" placeholder="password"></input>
-
-                    <button type="submit"> submit </button>
+                    <div className={styles.signup_row}>
+                        <label className={styles.row_label}>아이디 </label>
+                        <input type="text" name="username" placeholder="username" className={styles.input}></input>
+                    </div>
+                    <div className={styles.signup_row}>
+                        <label className={styles.row_label}>비밀번호 </label>
+                        <input type="password" name="password" placeholder="password" className={styles.input}></input>
+                    </div>
+                    <div className={styles.signup_row}>
+                        <label className={styles.row_label}>비밀번호 재확인</label>
+                        <input type="password" name="password" placeholder="password" className={styles.input}></input>
+                    </div>
+                    <div className={styles.signup_row}>
+                        <label className={styles.row_label}>이름  </label>
+                        <input type="text" name="name" placeholder="name" className={styles.input}></input>
+                    </div>
+                    <div className={styles.signup_last}>
+                        <button type="submit" className={styles.submit_button}> 확인 </button>
+                    </div>
                 </form>
             </div>
         </div >
