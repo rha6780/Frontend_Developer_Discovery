@@ -1,6 +1,5 @@
 import styles from '../../../styles/Navbar.module.css'
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { UserState } from '../../models/User';
 import { userCurrent } from '../../api/index';
 
@@ -19,15 +18,16 @@ const NavBar = () => {
 
     return (
         <div className={styles.navBar}>
-            <Link href="/" className={styles.link}>
-                {/* <img src={home_icon} id="bar-icon" alt="home" /> */}
-                <div>
-                    <span className={styles.uppercase}>D</span>
-                    eveloper
-                    <span className={styles.uppercase}>D</span>iscovery
-                </div>
-            </Link>
-            <div>{ }</div>
+            <a href="/" className={styles.nav_homelink}>
+                <span className={styles.uppercase}>D</span>
+                <span className={styles.downcase}>eveloper</span>
+                <span className={styles.uppercase}>D</span>
+                <span className={styles.downcase}>iscovery</span>
+            </a>
+            <div className={styles.nav_menu}>
+                <a href="http://127.0.0.1:3000/signup" className={styles.signup_link}> 회원가입 </a>
+                <a href="http://127.0.0.1:3000/signup" className={styles.signup_link}> 로그인 </a>
+            </div>
         </div>
     );
 }

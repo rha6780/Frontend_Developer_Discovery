@@ -1,38 +1,39 @@
 .navBar {
-  padding-left: 10px;
   text-align: center;
   display: flex;
-  line-height: 50px;
   align-items: center;
+  font-family: Verdana;;
   border-bottom: 1px #282c34 solid;
-}
-
-.nav-item {
-  margin: 5px;
-  padding: 15px;
-  font-size: calc(25px);
-  color: white;
-  max-width: 40px;
-  max-height: 20px;
-  display: inline;
-  align-items: center;
 }
 
 .nav-item:hover {
   color: lightblue;
 }
 
-.link {
+.nav_homelink {
   text-decoration: none;
+  font-weight: bold;
+  font-size: larger;
 }
 
-.uppercase {
+.nav_homelink > .uppercase {
   color: lightblue;
 }
 
-#bar-icon {
-  margin-top: 5px;
-  width: 30px;
-  height: 30px;
+.nav_homelink > .downcase {
+  color: black;
 }
 
+.nav_menu {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  overflow: hidden;
+}
+
+.nav_menu > .signup_link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 1rem;
+}
