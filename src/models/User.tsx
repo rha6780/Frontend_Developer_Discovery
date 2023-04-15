@@ -1,11 +1,11 @@
 export interface UserState {
     id: number;
-    email: string;
+    username: string;
     name: string;
 }
 
 export interface SignUpPayload {
-    email: string;
+    username: string;
     name: string;
     password: string;
 }

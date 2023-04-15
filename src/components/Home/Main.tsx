@@ -24,6 +24,3 @@ export const Main = () => {
 const video_list = videoList();
 console.log(video_list);
 
-const onSignUp = async () => {
-
-}
