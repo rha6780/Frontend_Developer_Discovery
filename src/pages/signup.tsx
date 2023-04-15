@@ -1,5 +1,5 @@
 import NavBar from '../components/shared/NavBar';
-import { Main } from '../components/Home/Main';
+import { SignUp } from '../components/Account/SignUp';
 import Graph from '../components/Home/Graph';
 
 
@@ -8,8 +8,7 @@ const Home = () => {
         <div>
             <NavBar />
             <div className="main">
-                <Main />
-                <Graph />
+                <SignUp />
             </div>
         </div>
     );

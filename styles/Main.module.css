@@ -16,6 +16,14 @@
   font-family: Verdana;
 }
 
+.main_list {
+  display: block;
+}
+
+.main_item {
+  display: block;
+}
+
 .main-link {
   color: #61dafb;
 }

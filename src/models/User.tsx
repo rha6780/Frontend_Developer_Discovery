@@ -1,5 +1,11 @@
 export interface UserState {
     id: number;
-    name: string;
     email: string;
+    name: string;
+}
+
+export interface SignUpPayload {
+    email: string;
+    name: string;
+    password: string;
 }
