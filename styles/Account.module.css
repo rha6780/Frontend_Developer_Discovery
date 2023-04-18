@@ -11,6 +11,13 @@
     font-weight: bold;
 }
 
+.instruction {
+    min-width: 500px;
+    text-align: center;
+    color: gray;
+    font-size: 15px;
+}
+
 .body {
     padding-top: 30px;
     min-height: 100vh;
@@ -27,12 +34,17 @@
 }
 
 .input {
-    width: 100%;
+    min-width: 100%;
     padding: 10px;
     border-width: 2px;
     border-style: inset;
     border-color: gray;
     border-radius: 5px;
+}
+
+.description {
+    color: gray;
+    font-size: 15px;
 }
 
 .signup_last {

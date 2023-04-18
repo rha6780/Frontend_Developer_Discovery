@@ -26,7 +26,7 @@ const NavBar = () => {
             </a>
             <div className={styles.nav_menu}>
                 <a href="http://127.0.0.1:3000/signup" className={styles.signup_link}> 회원가입 </a>
-                <a href="http://127.0.0.1:3000/signup" className={styles.signup_link}> 로그인 </a>
+                <a href="http://127.0.0.1:3000/signin" className={styles.signup_link}> 로그인 </a>
             </div>
         </div>
     );
