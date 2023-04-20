@@ -1,9 +1,11 @@
+import cookies from 'next-cookies'
 import NavBar from '../components/shared/NavBar';
 import { SignUp } from '../components/Account/SignUp';
 import Graph from '../components/Home/Graph';
 
-
 const Home = () => {
+
+
     return (
         <div>
             <NavBar />

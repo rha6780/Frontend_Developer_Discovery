@@ -4,17 +4,17 @@ import { UserState } from '../../models/User';
 import { userCurrent } from '../../api/index';
 
 const NavBar = () => {
-    const [user, setUser] = useState<UserState>();
+    // const [user, setUser] = useState<UserState>();
 
-    useEffect(() => {
-        const initQuestion = async () => {
-            const user = await userCurrent();
-            setUser(user);
-            console.log(user)
-        };
+    // useEffect(() => {
+    //     const initQuestion = async () => {
+    //         const user = await userCurrent();
+    //         setUser(user);
+    //         console.log(user)
+    //     };
 
-        initQuestion();
-    }, []);
+    //     initQuestion();
+    // }, []);
 
     return (
         <div className={styles.navBar}>
