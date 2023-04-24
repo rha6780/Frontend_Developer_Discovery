@@ -8,7 +8,7 @@ export const signUp = async (signUpPayload: SignUpPayload) => {
 
     try {
         const { data } = await ApiClient.post<UserState>(`accounts/signup`, signUpPayload);
-        setCookie('refresh_token', data.token['refresh'], { httpOnly: true, secure: true });
+        setCookie('refresh_token', data.token['refresh'], { secure: true }); //httpOnly: true,
         return data;
     } catch (error) {
         console.log(error);

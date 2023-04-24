@@ -37,3 +37,8 @@
   font-weight: bold;
   padding: 1rem;
 }
+
+
+.nav_menu > .disable {
+  display: none;
+}

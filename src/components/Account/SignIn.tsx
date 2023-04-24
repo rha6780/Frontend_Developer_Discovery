@@ -13,6 +13,7 @@ export const SignIn = () => {
                 password: event.target.password.value,
             }
             signIn(data);
+            alert("로그인에 성공했습니다.!");
             window.location.assign("/");
         } catch (error) {
             alert("서버가 불안정 합니다. 관리자에게 문의하세요.");
