@@ -5,19 +5,23 @@ import { signUp } from '@/api/v1/accounts/signup';
 
 export const SignUp = () => {
 
-    const signUpSubmit = (event: any) => {
+    const signUpSubmit = async (event: any) => {
         event.preventDefault();
         try {
-            const data = {
-                username: event.target.username.value,
-                password: event.target.password.value,
-                re_password: event.target.re_password.value,
-                name: event.target.name.value,
-                email: event.target.email.value,
+            if (event.target.password.value != event.target.re_password.value) {
+                alert("비밀번호와 비밀번호 확인이 같지 않습니다.");
             }
-            signUp(data);
-            alert("회원가입에 성공했습니다.!");
-            window.location.assign("/");
+            else {
+                const data = {
+                    email: event.target.email.value,
+                    password: event.target.password.value,
+                    re_password: event.target.re_password.value,
+                    name: event.target.name.value,
+                }
+                await signUp(data);
+                alert("회원가입에 성공했습니다.!");
+                window.location.assign("/");
+            }
         } catch (error) {
             alert("서버가 불안정 합니다. 관리자에게 문의하세요.");
             console.log(error);
@@ -33,12 +37,14 @@ export const SignUp = () => {
             <div className={styles.body}>
                 <form method="post" onSubmit={signUpSubmit}>
                     <div className={styles.signup_row}>
-                        <label className={styles.row_label}>아이디*</label>
-                        <input type="text" name="username" placeholder="username" className={styles.input}></input>
+                        <label className={styles.row_label}>email*</label>
+                        <input type="text" name="email" placeholder="email@example.com" className={styles.input}></input>
+                        <div className={styles.description}> 이메일은 비밀번호 찾기 시에 사용됩니다.</div>
                     </div>
                     <div className={styles.signup_row}>
                         <label className={styles.row_label}>비밀번호*</label>
                         <input type="password" name="password" placeholder="password" className={styles.input}></input>
+                        <div className={styles.description}> 비밀번호는 8자 이상이어야 합니다.</div>
                     </div>
                     <div className={styles.signup_row}>
                         <label className={styles.row_label}>비밀번호 재확인*</label>
@@ -47,11 +53,6 @@ export const SignUp = () => {
                     <div className={styles.signup_row}>
                         <label className={styles.row_label}>이름*</label>
                         <input type="text" name="name" placeholder="name" className={styles.input}></input>
-                    </div>
-                    <div className={styles.signup_row}>
-                        <label className={styles.row_label}>이메일*</label>
-                        <input type="text" name="email" placeholder="email" className={styles.input}></input>
-                        <div className={styles.description}> 이메일은 비밀번호 찾기 시에 사용됩니다.</div>
                     </div>
                     <div className={styles.signup_last}>
                         <button type="submit" className={styles.submit_button}> 확인 </button>

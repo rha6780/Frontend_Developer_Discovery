@@ -5,14 +5,14 @@ import { signIn } from '@/api/v1/accounts/signin';
 
 export const SignIn = () => {
 
-    const signInSubmit = (event: any) => {
+    const signInSubmit = async (event: any) => {
         event.preventDefault();
         try {
             const data = {
-                username: event.target.username.value,
+                email: event.target.email.value,
                 password: event.target.password.value,
             }
-            signIn(data);
+            await signIn(data);
             alert("로그인에 성공했습니다.!");
             window.location.assign("/");
         } catch (error) {
@@ -33,14 +33,14 @@ export const SignIn = () => {
             <div className={styles.body}>
                 <form method="post" onSubmit={signInSubmit}>
                     <div className={styles.signup_row}>
-                        <label className={styles.row_label}>아이디</label>
-                        <input type="text" name="username" placeholder="username" className={styles.input}></input>
+                        <label className={styles.row_label}>이메일</label>
+                        <input type="text" name="email" placeholder="email" className={styles.input}></input>
                     </div>
                     <div className={styles.signup_row}>
                         <label className={styles.row_label}>비밀번호</label>
                         <input type="password" name="password" placeholder="password" className={styles.input}></input>
                         <div className={styles.description}>
-                            <a> ✈︎ 비밀번호 찾기 </a>
+                            <a href='/resetpassword'> ✈︎ 비밀번호 찾기 </a>
                         </div>
                     </div>
                     <div className={styles.signup_last}>

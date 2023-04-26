@@ -6,12 +6,8 @@ import { UserState, SignInPayload } from '../../../models/User';
 export const signIn = async (signInPayload: SignInPayload) => {
     console.log('payload:', signInPayload);
 
-    try {
-        const { data } = await ApiClient.post<UserState>(`accounts/signin`, signInPayload);
-        setCookie('refresh_token', data.token['refresh'], { secure: true }); //httpOnly: true,
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
+    const { data } = await ApiClient.post<UserState>(`accounts/signin`, signInPayload);
+    setCookie('refresh_token', data.token['refresh'], { secure: true }); //httpOnly: true,
+    return data;
 };
 
