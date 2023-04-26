@@ -1,18 +1,21 @@
 export interface UserState {
     id: number;
-    username: string;
+    email: string;
     name: string;
 }
 
 export interface SignUpPayload {
-    username: string;
-    name: string;
     email: string;
+    name: string;
     password: string;
     re_password: string;
 }
 
 export interface SignInPayload {
-    username: string;
+    email: string;
     password: string;
+}
+
+export interface ResetPasswordPayload {
+    email: string;
 }
