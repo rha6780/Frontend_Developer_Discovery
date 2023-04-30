@@ -18,4 +18,5 @@ export interface SignInPayload {
 
 export interface ResetPasswordPayload {
     email: string;
+    password: string;
 }

@@ -1,6 +1,5 @@
 import NavBar from '../components/shared/NavBar';
 import { Main } from '../components/Home/Main';
-import Graph from '../components/Home/Graph';
 
 
 const Home = () => {
@@ -9,7 +8,6 @@ const Home = () => {
             <NavBar />
             <div className="main">
                 <Main />
-                <Graph />
             </div>
         </div>
     );

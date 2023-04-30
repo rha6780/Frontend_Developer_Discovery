@@ -40,7 +40,7 @@ export const SignIn = () => {
                         <label className={styles.row_label}>비밀번호</label>
                         <input type="password" name="password" placeholder="password" className={styles.input}></input>
                         <div className={styles.description}>
-                            <a href='/resetpassword'> ✈︎ 비밀번호 찾기 </a>
+                            <a href='/resetpassword'> ✈︎ 비밀번호 재설정 </a>
                         </div>
                     </div>
                     <div className={styles.signup_last}>

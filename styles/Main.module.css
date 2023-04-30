@@ -27,6 +27,20 @@
   color: #61dafb;
 }
 
+.video_section { 
+  padding: 20px;
+  /* background-color: aqua; */
+}
+
+.video_list{
+  padding-left: 20px;
+}
+
+.video_item{
+  padding: 10px;
+}
+
+
 .project_title {
   padding: 30px;
   padding-bottom: 30px;
@@ -36,9 +50,10 @@
   padding-bottom: 40px;
 }
 
-.sub-title {
-  
-  padding-bottom: 10px;
+.sub_title {
+  padding: 20px ;
+  font-size: calc(10px + 1vmin);
+  font-weight: bold;
 }
 
 .start_btn {
