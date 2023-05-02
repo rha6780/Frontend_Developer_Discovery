@@ -27,8 +27,7 @@ export const Main = () => {
                         <div key={video.id} className={styles.video_item}>
                             <Image src='/data_quantity.png' height='200px' width='350px' />
                             <br />
-                            {/* <Image styles='width: 100px; height: 100px layout='fill'" src="public/smart_display.png" alt="video_image" /> */}
-                            <a href={video.youtube_link}>{video.title}</a>
+                            <a className={styles.video_link} href={video.youtube_link}>{video.title}</a>
                         </div>
                     ))
                 }</div>}

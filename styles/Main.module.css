@@ -41,6 +41,12 @@
 }
 
 
+.video_link{
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
 .project_title {
   padding: 30px;
   padding-bottom: 30px;

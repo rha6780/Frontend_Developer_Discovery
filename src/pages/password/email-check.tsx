@@ -1,5 +1,5 @@
-import NavBar from '../components/shared/NavBar';
-import { ResetPassword } from '../components/Account/ResetPassword';
+import NavBar from '../../components/shared/NavBar';
+import { EmailCheck } from '../../components/Account/Emailcheck';
 
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
         <div>
             <NavBar />
             <div className="main">
-                <ResetPassword />
+                <EmailCheck />
             </div>
         </div>
     );

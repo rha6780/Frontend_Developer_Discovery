@@ -16,7 +16,11 @@ export interface SignInPayload {
     password: string;
 }
 
-export interface ResetPasswordPayload {
+export interface EmailCheckPayload {
     email: string;
+}
+
+export interface ResetPasswordPayload {
     password: string;
+    token: any;
 }
