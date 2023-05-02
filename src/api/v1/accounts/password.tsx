@@ -9,6 +9,6 @@ export const resetPassword = async (resetPasswordPayload: ResetPasswordPayload) 
 };
 
 export const emailCheck = async (emailCheckPayload: EmailCheckPayload) => {
-    const { data } = await ApiClient.post(`accounts/reset-password`, emailCheckPayload);
+    const { data } = await ApiClient.post(`accounts/email-check`, emailCheckPayload);
     return data;
 };

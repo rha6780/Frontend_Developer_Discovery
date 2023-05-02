@@ -38,6 +38,7 @@ const Home = () => {
                         <div className={styles.signup_row}>
                             <label className={styles.row_label}>비밀번호</label>
                             <input type="password" name="password" placeholder="password" className={styles.input}></input>
+                            <div className={styles.description}> 비밀번호는 8자 이상이어야 합니다.</div>
                         </div>
                         <div className={styles.signup_row}>
                             <label className={styles.row_label}>비밀번호 확인</label>
