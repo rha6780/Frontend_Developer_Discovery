@@ -1,4 +1,5 @@
 import NavBar from '../components/shared/NavBar';
+import Footer from '../components/shared/Footer';
 import { Main } from '../components/Home/Main';
 
 
@@ -9,6 +10,7 @@ const Home = () => {
             <div className="main">
                 <Main />
             </div>
+            <Footer />
         </div>
     );
 }

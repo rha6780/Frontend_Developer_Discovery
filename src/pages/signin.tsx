@@ -1,6 +1,7 @@
 import NavBar from '../components/shared/NavBar';
 import { SignIn } from '../components/Account/SignIn';
 import { ToastContainer } from 'react-toastify';
+import Footer from '../components/shared/Footer';
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             <div className="main">
                 <SignIn />
             </div>
+            <Footer />
         </div>
     );
 }

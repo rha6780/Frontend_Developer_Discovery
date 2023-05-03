@@ -1,6 +1,7 @@
 import styles from '../../styles/Profile.module.css'
 import Image from "next/image";
 import NavBar from '../components/shared/NavBar';
+import Footer from '../components/shared/Footer';
 import { useEffect, useState } from 'react';
 import { UserState } from '@/models/User';
 import { userCurrent } from '@/api/v1/users/current';
@@ -42,6 +43,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

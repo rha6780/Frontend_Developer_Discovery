@@ -1,5 +1,6 @@
 import styles from '../../../styles/Account.module.css'
 import NavBar from '../../components/shared/NavBar';
+import Footer from '../../components/shared/Footer';
 import { useRouter } from 'next/router';
 import { resetPassword } from '@/api/v1/accounts/password';
 
@@ -50,6 +51,7 @@ const Home = () => {
                     </form>
                 </div>
             </div >
+            <Footer />
         </div>
     );
 }
