@@ -1,7 +1,7 @@
 import styles from '../../../styles/Account.module.css'
-import Image from "next/image";
-import { Link } from 'react-router-dom';
 import { signIn } from '@/api/v1/accounts/signin';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const SignIn = () => {
 
@@ -13,11 +13,16 @@ export const SignIn = () => {
                 password: event.target.password.value,
             }
             await signIn(data);
-            alert("로그인에 성공했습니다.!");
+            toast.success('로그인 성공', {
+                position: "top-center",
+                autoClose: 1000,
+            });
             window.location.assign("/");
         } catch (error) {
-            alert("서버가 불안정 합니다. 관리자에게 문의하세요.");
-            console.log(error);
+            toast.error('이메일과 비밀번호를 다시 확인해주세요', {
+                position: "top-center",
+                autoClose: 1000,
+            });
         }
     }
 

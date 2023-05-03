@@ -4,12 +4,11 @@ import { getCookie } from '@/api/cookies';
 import { signOut } from '@/api/v1/accounts/signout';
 
 const NavBar = () => {
-    // TODO: 로그인 이후 유저 프로필이 표시되도록
-    // const [user, setUser] = useState<UserState>();
     const [isLogin, setisLogin] = useState(false);
     useEffect(() => setisLogin(getCookie('refresh_token') != null), []);
 
     return (
+
         <div className={styles.navBar}>
             <a href="/" className={styles.nav_homelink}>
                 <span className={styles.uppercase}>D</span>

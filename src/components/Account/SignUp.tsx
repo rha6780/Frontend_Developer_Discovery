@@ -1,30 +1,47 @@
 import styles from '../../../styles/Account.module.css'
-import Image from "next/image";
-import { Link } from 'react-router-dom';
 import { signUp } from '@/api/v1/accounts/signup';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const SignUp = () => {
 
     const signUpSubmit = async (event: any) => {
         event.preventDefault();
         try {
-            if (event.target.password.value != event.target.re_password.value) {
-                alert("비밀번호와 비밀번호 확인이 같지 않습니다.");
+            if (event.target.name.value == '') {
+                toast.error('이름을 작성해주세요.', {
+                    position: "top-center",
+                    autoClose: 2000,
+                });
             }
             else {
-                const data = {
-                    email: event.target.email.value,
-                    password: event.target.password.value,
-                    re_password: event.target.re_password.value,
-                    name: event.target.name.value,
+                if (event.target.password.value != event.target.re_password.value) {
+                    toast.error('비밀번호와 비밀번호 확인의 값이 다릅니다.', {
+                        position: "top-center",
+                        autoClose: 2000,
+                    });
                 }
-                await signUp(data);
-                alert("회원가입에 성공했습니다.!");
-                window.location.assign("/");
+                else {
+                    const data = {
+                        email: event.target.email.value,
+                        password: event.target.password.value,
+                        re_password: event.target.re_password.value,
+                        name: event.target.name.value,
+                    }
+                    await signUp(data);
+                    toast.success('회원가입 성공', {
+                        position: "top-center",
+                        autoClose: 1000,
+                    });
+                    window.location.assign("/");
+                }
             }
         } catch (error) {
-            alert("서버가 불안정 합니다. 관리자에게 문의하세요.");
-            console.log(error);
+            toast.error("회원가입 실패 각 값을 채워주세요", {
+                position: "top-center",
+                autoClose: 1000,
+            });
         }
     }
 
