@@ -19,15 +19,20 @@ export const Main = () => {
 
     return (
         <div>
-            <div className={styles.main_title}>Developer Discovery</div>
+            {/* <div className={styles.main_title}>Developer Discovery</div> */}
+            {/* <div>
+                <Image src='/student.jpg' height='420px' width='640px' />
+                <div> 개발과 관련된 정보를 찾아보자. </div>
+            </div> */}
             <div className={styles.video_section}>
                 <div className={styles.sub_title}>Trend Videos</div>
                 {<div className={styles.video_list}>{
                     video_list?.map(video => (
                         <div key={video.id} className={styles.video_item}>
-                            <Image src='/data_quantity.png' height='200px' width='350px' />
+                            <img src={video.thumbnail} height='200px' width='350px' />
                             <br />
                             <a className={styles.video_link} href={video.youtube_link}>{video.title}</a>
+                            <div>{video.title}</div>
                         </div>
                     ))
                 }</div>}
