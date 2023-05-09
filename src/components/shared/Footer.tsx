@@ -9,7 +9,16 @@ const Footer = () => {
     return (
         <div>
             <div className={styles.footer}>
-                푸터
+                <a href="/" className={styles.footer_homelink}>
+                    <span className={styles.uppercase}>D</span>
+                    <span className={styles.downcase}>eveloper</span>
+                    <span className={styles.uppercase}>D</span>
+                    <span className={styles.downcase}>iscovery</span>
+                </a>
+                <div className={styles.copyright}>
+                    Copyright : rha6780
+                </div>
+
             </div>
         </div>
 

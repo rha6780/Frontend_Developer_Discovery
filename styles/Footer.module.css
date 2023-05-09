@@ -5,4 +5,27 @@
   width: 100%;
   /* background-color: lightgray; */
   border-top: 1px solid lightgray;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-family: Verdana;
+}
+
+.footer_homelink {
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.footer_homelink > .uppercase {
+  color: lightblue;
+}
+
+.footer_homelink > .downcase {
+  color: black;
+}
+
+.title {
+  margin-top: 10px;
 }
