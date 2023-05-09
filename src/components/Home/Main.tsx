@@ -32,7 +32,7 @@ export const Main = () => {
                             <img src={video.thumbnail} height='200px' width='350px' />
                             <br />
                             <a className={styles.video_link} href={video.youtube_link}>{video.title}</a>
-                            <div>{video.title}</div>
+                            <div>{video.introduction}</div>
                         </div>
                     ))
                 }</div>}
