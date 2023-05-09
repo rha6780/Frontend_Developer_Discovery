@@ -12,7 +12,10 @@ const Profile = () => {
 
     useEffect(() => {
         const initUserData = async () => {
-            setUserData(await userCurrent());
+            const user_current = await userCurrent()
+            console.log(user_current);
+            setUserData(user_current);
+            console.log(user_data);
         };
         initUserData();
     }, []);
@@ -29,17 +32,20 @@ const Profile = () => {
                         <span>
                         </span>
                         <br />
-                        <span>
-                            이메일
-                        </span>
+                        {<div>{
+                            <div key={user_data?.id}>
+                                <div>이메일 : {user_data?.email}</div>
+                                <div>이름 : {user_data?.name}</div>
+                            </div>
+                        }</div>}
                     </div>
 
                     <div className={styles.function}>
-                        <a href="#">이메일 변경</a>
+                        <a href="#" className={styles.func_btn}>이메일 변경</a>
                         <br />
-                        <a href="#">비밀번호 변경</a>
+                        <a href="#" className={styles.func_btn}>비밀번호 변경</a>
                         <br />
-                        <a href="#">탈퇴하기</a>
+                        <a href="#" className={styles.func_btn}>탈퇴하기</a>
                     </div>
                 </div>
             </div>
