@@ -7,7 +7,6 @@ export const Hero = () => {
             <div className={styles.image_text}>
                 Developer Discovery <br />
                 개발과 관련된 정보들을 만나보세요.
-
             </div>
         </div >
     );

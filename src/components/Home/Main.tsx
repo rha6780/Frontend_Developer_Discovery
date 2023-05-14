@@ -25,7 +25,7 @@ export const Main = () => {
                     video_list?.map(video => (
                         <div key={video.id} className={styles.video_item}>
                             <a className={styles.video_link} href={video.youtube_link}>
-                                <img src={video.thumbnail} height='200px' width='350px' />
+                                <img src={video.thumbnail} height='200px' width='300px' />
                                 <br />
                                 {video.title}</a>
                             <div className={styles.video_introduction}>{video.introduction}</div>
