@@ -41,7 +41,7 @@ const Profile = () => {
                     <br />
                     <a href="#" className={styles.func_btn}>비밀번호 변경</a>
                     <br />
-                    <a href="#" className={styles.func_btn}>탈퇴하기</a>
+                    <a href="/withdrawal" className={styles.func_btn}>탈퇴하기</a>
                 </div>
             </div>
         </div>
