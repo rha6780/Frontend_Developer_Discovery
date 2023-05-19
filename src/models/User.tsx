@@ -4,6 +4,10 @@ export interface UserState {
     name: string;
 }
 
+export interface EmailChangePayload {
+    changed_email: string;
+}
+
 export interface SignUpPayload {
     email: string;
     name: string;

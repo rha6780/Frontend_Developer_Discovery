@@ -1,3 +1,4 @@
+import { userChangeEmail } from '@/api/v1/users/change_email';
 import styles from '../../../styles/Account.module.css'
 
 
@@ -5,6 +6,17 @@ const EmailChange = () => {
 
     const changeEmail = async (event: any) => {
         event.preventDefault();
+        try {
+            const data = {
+                changed_email: event.target.changed_email.value
+            }
+            await userChangeEmail(data);
+            window.location.assign("/");
+        } catch (error) {
+            alert("서버가 불안정 합니다. 관리자에게 문의하세요.");
+            console.log(error);
+        }
+
     }
 
     return (
