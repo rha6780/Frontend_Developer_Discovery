@@ -76,7 +76,7 @@ export const SignUp = () => {
                     </div>
                 </form>
             </div>
-        </div >
+        </div>
     );
 }
 //TODO : password 암호화 해서 보내도록
