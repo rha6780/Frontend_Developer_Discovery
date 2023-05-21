@@ -1,13 +1,15 @@
 .container {
     display: block;
     justify-content: center;
-    padding: 10px 150px;
+    padding: 10px 10%;
 }
+
 .image_text {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 50px;
+    font-size: calc(30px + 1vmin);
     position: absolute;
     top: 30%;
     left: 20%;
+    padding: 10px 10%;
     color: white;
 }

@@ -30,12 +30,13 @@
 .video_section { 
   display: block;
   padding: 20px;
+  flex-wrap: wrap;
   /* background-color: aqua; */
 }
 
 .video_list{
   display: flex;
-  padding: 20px;
+  padding: 0 10%;
   display: flex;
   justify-content: center;
 }
