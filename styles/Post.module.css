@@ -1,0 +1,17 @@
+.main_body {
+    align-items: center;
+    min-height: 70vh;
+    display: block;
+    flex-direction: column;
+    justify-content: stretch;
+    font-size: calc(1px + 1vmin);
+    margin: 20px calc(20px + 1vmin);
+}
+
+.editor_title {
+    text-align: center;
+    font-family: Verdana;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+  
