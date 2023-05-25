@@ -1,8 +1,8 @@
-import { userChangeEmail } from '@/api/v1/users/change_email';
+import { videoCreate } from '@/api/v1/videos/create';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import styles from '../../../styles/Post.module.css';
 import dynamic from 'next/dynamic';
+import 'react-toastify/dist/ReactToastify.css';
 import 'react-quill/dist/quill.snow.css';
 
 
@@ -13,14 +13,13 @@ const EditorWrapper = dynamic(() => import('react-quill'), {
 
 export const Editor = () => {
 
-
     const PostSubmit = async (event: any) => {
         event.preventDefault();
         try {
             const data = {
                 changed_email: event.target.changed_email.value
             }
-            await userChangeEmail(data);
+            await videoCreate();
             window.location.assign("/");
         } catch (error) {
             toast.error('서버가 불안정 합니다. 관리자에게 문의하세요.', {

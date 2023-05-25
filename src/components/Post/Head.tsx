@@ -1,10 +1,10 @@
 import styles from '../../../styles/Post.module.css'
 
-export const Head = () => {
+export const Head = (props: any) => {
 
     return (
         <div className={styles.editor_title}>
-            게시글 작성하기
+            📝 {props.title} 작성하기
         </div >
     );
 }

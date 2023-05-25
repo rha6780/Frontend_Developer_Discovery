@@ -9,7 +9,7 @@ const Page = () => {
     return (
         <div>
             <NavBar />
-            <Head />
+            <Head title="게시글" />
             <Editor />
             <Footer />
         </div>

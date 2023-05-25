@@ -39,7 +39,7 @@ export const Main = () => {
                 <div className={styles.list_item}></div>
             </div>
             <div className={styles.main_body}>
-                <a href="/post/wirte" className={styles.start_btn}>📝 작성하기</a>
+                <a href="/video/create" className={styles.start_btn}>📝 작성하기</a>
             </div>
         </div >
 
