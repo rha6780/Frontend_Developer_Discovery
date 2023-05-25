@@ -17,10 +17,11 @@ const NavBar = () => {
                 <span className={styles.downcase}>iscovery</span>
             </a>
             <div className={styles.nav_menu}>
-                <a href="http://127.0.0.1:3000" onClick={signOut} className={`${isLogin ? styles.signup_link : styles.disable}`} > 로그 아웃 </a>
-                <a href="http://127.0.0.1:3000/profile" className={`${isLogin ? styles.signup_link : styles.disable}`} > 프로필 </a>
-                <a href="http://127.0.0.1:3000/signup" className={`${isLogin ? styles.disable : styles.signup_link}`}> 회원가입 </a>
-                <a href="http://127.0.0.1:3000/signin" className={`${isLogin ? styles.disable : styles.signup_link}`}> 로그인 </a>
+                <a href="/" className={styles.signup_link}> 글쓰기 </a>
+                <a href="/" onClick={signOut} className={`${isLogin ? styles.signup_link : styles.disable}`} > 로그 아웃 </a>
+                <a href="/profile" className={`${isLogin ? styles.signup_link : styles.disable}`} > 프로필 </a>
+                <a href="/signup" className={`${isLogin ? styles.disable : styles.signup_link}`}> 회원가입 </a>
+                <a href="/signin" className={`${isLogin ? styles.disable : styles.signup_link}`}> 로그인 </a>
             </div>
         </div>
     );

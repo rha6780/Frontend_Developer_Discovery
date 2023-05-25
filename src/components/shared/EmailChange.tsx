@@ -1,6 +1,7 @@
 import { userChangeEmail } from '@/api/v1/users/change_email';
 import styles from '../../../styles/Account.module.css'
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EmailChange = () => {
 
@@ -13,7 +14,10 @@ const EmailChange = () => {
             await userChangeEmail(data);
             window.location.assign("/");
         } catch (error) {
-            alert("서버가 불안정 합니다. 관리자에게 문의하세요.");
+            toast.error('서버가 불안정 합니다. 관리자에게 문의하세요.', {
+                position: "top-center",
+                autoClose: 2000,
+            });
             console.log(error);
         }
 
