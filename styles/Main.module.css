@@ -82,12 +82,16 @@
   font-weight: bold;
 }
 
+.write {
+  justify-content: flex-end;
+  font-size: calc(10px + 1vmin);
+  font-weight: bold;
+}
+
 .start_btn {
   display: block;
   text-align: center;
-  width: 150px;
-  height: 50px;
-  padding: 15px 0;
+  padding: 15px;
   background-color: lightblue;
   align-items: center;
   color: black;

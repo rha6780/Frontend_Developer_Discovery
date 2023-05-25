@@ -20,7 +20,9 @@ export const Main = () => {
     return (
         <div>
             <div className={styles.video_section}>
-                <div className={styles.sub_title}>Trend Videos</div>
+                <div className={styles.sub_title}>
+                    Trend Videos
+                </div>
                 {<div className={styles.video_list}>{
                     video_list?.map(video => (
                         <div key={video.id} className={styles.video_item}>
@@ -37,6 +39,7 @@ export const Main = () => {
                 <div className={styles.list_item}></div>
             </div>
             <div className={styles.main_body}>
+                <a href="/post/wirte" className={styles.start_btn}>📝 작성하기</a>
             </div>
         </div >
 
