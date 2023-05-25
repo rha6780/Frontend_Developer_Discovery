@@ -4,9 +4,8 @@ export const Head = () => {
 
     return (
         <div className={styles.editor_title}>
-            글 작성하기
+            게시글 작성하기
         </div >
-
     );
 }
 

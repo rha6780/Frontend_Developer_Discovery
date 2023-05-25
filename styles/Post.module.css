@@ -1,17 +1,42 @@
-.main_body {
+.editor_title {
+    font-family: Verdana;
+    padding: 30px;
+    font: bold;
+    font-size: calc(20px + 1vmin);
+    margin-bottom: 10px;
+}
+
+.editor_body {
     align-items: center;
     min-height: 70vh;
     display: block;
     flex-direction: column;
     justify-content: stretch;
     font-size: calc(1px + 1vmin);
-    margin: 20px calc(20px + 1vmin);
+    margin: 10px calc(20px + 1vmin);
 }
 
-.editor_title {
-    text-align: center;
-    font-family: Verdana;
-    padding: 20px;
-    margin-bottom: 20px;
+.signup_row {
+    padding-bottom: 30px;
+    min-width: 500px;
+}
+
+.button_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.submit_button {
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    width: 30%;
+    box-shadow: 0 0 0 0;
+    border-radius: 5px;
+    color: lightblue;
+    background-color: black;
+    border-color: black;
 }
   
