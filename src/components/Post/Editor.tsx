@@ -27,7 +27,6 @@ export const Editor = () => {
                 autoClose: 2000,
             });
         }
-
     }
 
     return (
