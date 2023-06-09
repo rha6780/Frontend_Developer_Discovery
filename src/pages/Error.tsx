@@ -3,7 +3,9 @@ import Footer from '../components/shared/Footer';
 import NotFound from '../components/Error/NotFound';
 
 
-const Error = () => {
+const Error = (props: any) => {
+    var error_name = props.name.trim() == 0 ? "not_found" : props.name
+
     return (
         <div>
             <NavBar />

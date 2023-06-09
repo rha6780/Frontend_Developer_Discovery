@@ -1,6 +1,5 @@
 import cookies from 'next-cookies'
 import NavBar from '../components/shared/NavBar';
-import { SignUp } from '../components/Account/SignUp';
 import { ToastContainer } from 'react-toastify';
 import Footer from '../components/shared/Footer';
 import { WithDrawal } from '@/components/Account/Withdrawal';
