@@ -1,7 +1,7 @@
 .container {
     display: block;
     justify-content: center;
-    padding: 10px 10%;
+    padding: 50px 0 50px;
 }
 
 .image_text {
@@ -12,4 +12,10 @@
     left: 20%;
     padding: 10px 10%;
     color: white;
+}
+
+.title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: calc(30px + 1vmin);
+    padding: 10px 10%;
 }

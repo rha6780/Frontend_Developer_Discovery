@@ -29,7 +29,7 @@
 
 .video_section { 
   display: block;
-  padding: 20px;
+  padding: 20px 50px;
   flex-wrap: wrap;
   /* background-color: aqua; */
 }
@@ -53,15 +53,20 @@
   text-decoration: none;
 }
 
+.video_thumbnail{
+  border-radius: 5%;
+  border: 1px solid gainsboro;
+}
+
 .video_introduction{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: darkgray;
-  margin-top: 10px;
+  font-size: calc(5px + 1vmin);
   padding-top: 5px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  border-top: 1px #282c34 solid;
+  /* border-top: 1px #282c34 solid; */
 }
 
 

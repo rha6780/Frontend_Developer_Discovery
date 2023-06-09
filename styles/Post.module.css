@@ -1,23 +1,46 @@
 .editor_title {
     font-family: Verdana;
-    padding: 30px;
+    padding: 20px 50px;
     font: bold;
     font-size: calc(20px + 1vmin);
-    margin-bottom: 10px;
+}
+
+.editor_section {
+    padding: 0px 50px;
 }
 
 .editor_body {
     align-items: center;
-    min-height: 70vh;
     display: block;
+    height: 200px;
     flex-direction: column;
     justify-content: stretch;
     font-size: calc(1px + 1vmin);
-    margin: 10px calc(20px + 1vmin);
+    /* margin: 10px calc(20px + 1vmin); */
+}
+
+.input_label {
+    font-family: Verdana;
+}
+
+.input {
+    display: block;
+    width: 97%;
+    padding: 5px 5px;
+    max-height: 50px;
+}
+
+.input_body {
+    font-family: Verdana;
+    display: block;
+    text-align: top;
+    width: 97%;
+    height: 100%;
+    padding: 5px 5px;
 }
 
 .signup_row {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     min-width: 500px;
 }
 
@@ -25,7 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 40px;
+    padding: 40px 0px;
 }
 
 .submit_button {
