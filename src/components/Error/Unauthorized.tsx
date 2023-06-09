@@ -1,19 +1,17 @@
 import styles from '../../../styles/Error.module.css';
-import errors from '@/models/error_list.json';
 
-const NotFound = (props: any) => {
-
+const Unauthorized = () => {
     return (
         <div className={styles.container}>
 
             <div className={styles.title}>
                 ⚠️
                 <br />
-                페이지를 찾을 수 없습니다.
+                로그인이 필요한 작업입니다.
             </div>
-            <a href="/">홈으로</a>
+            <a href="/signin">로그인하기</a>
         </div>
     );
 }
 
-export default NotFound;
+export default Unauthorized;

@@ -10,3 +10,10 @@ export interface VideoState {
 export interface VideoListState {
     items: VideoState[];
 }
+
+export interface VideoCreatePayload {
+    title: string;
+    introduction: string;
+    video_link: string;
+    thumbnail: string;
+}
