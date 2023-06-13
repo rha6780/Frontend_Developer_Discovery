@@ -33,10 +33,6 @@ export const Form = () => {
                     <label className={styles.input_label}>제목</label>
                     <input type="text" name="title" placeholder="제목" className={styles.input}></input>
                 </div>
-                <div className={styles.signup_row}>
-                    <label className={styles.input_label}>비디오 링크</label>
-                    <input type="text" name="video_link" placeholder="링크" className={styles.input}></input>
-                </div>
                 <div className={styles.editor_body}>
                     <textarea name="introduction" placeholder="내용" className={styles.input_body}></textarea>
                 </div>
