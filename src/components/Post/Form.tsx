@@ -1,4 +1,3 @@
-import { videoCreate } from '@/api/v1/videos/create';
 import { toast } from 'react-toastify';
 import styles from '../../../styles/Post.module.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,7 +15,7 @@ export const Form = () => {
                 introduction: event.target.introduction.value,
                 thumbnail: event.target.introduction.value,
             }
-            await videoCreate(data);
+            // await videoCreate(data);
             window.location.assign("/");
         } catch (error) {
             toast.error('서버가 불안정 합니다. 관리자에게 문의하세요.', {

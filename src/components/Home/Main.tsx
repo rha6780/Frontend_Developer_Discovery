@@ -1,12 +1,10 @@
 import styles from '../../../styles/Main.module.css'
 import Image from "next/image";
 import { Link } from 'react-router-dom';
-import { videoList } from '@/api/v1/videos/list';
 import { useEffect, useState } from 'react';
-import { VideoState } from '../../models/Video';
 
 export const Main = () => {
-    const [video_list, setVideoList] = useState<VideoState[]>();
+    // const [video_list, setVideoList] = useState<VideoState[]>();
 
     // useEffect(() => {
     //     const initVideoList = async () => {
