@@ -18,9 +18,6 @@ export const Main = () => {
     return (
         <div>
             <div className={styles.video_section}>
-                <div className={styles.sub_title}>
-                    Trend Videos
-                </div>
                 {/* {<div className={styles.video_list}>{
                     video_list?.map(video => (
                         <div key={video.id} className={styles.video_item}>

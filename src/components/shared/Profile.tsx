@@ -7,14 +7,12 @@ import { userCurrent } from '@/api/v1/users/current';
 
 const Profile = () => {
     const [user_data, setUserData] = useState<UserState>();
-
+    const initUserData = async () => {
+        const user_current = await userCurrent()
+        setUserData(user_current);
+        console.log(user_current);
+    };
     useEffect(() => {
-        const initUserData = async () => {
-            const user_current = await userCurrent()
-            console.log(user_current);
-            setUserData(user_current);
-            console.log(user_data);
-        };
         initUserData();
     }, []);
 
