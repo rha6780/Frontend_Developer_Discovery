@@ -27,49 +27,6 @@
   color: #61dafb;
 }
 
-.video_section { 
-  display: block;
-  padding: 20px 50px;
-  flex-wrap: wrap;
-  /* background-color: aqua; */
-}
-
-.video_list{
-  display: flex;
-  padding: 0 10%;
-  display: flex;
-  justify-content: center;
-}
-
-.video_item{
-  max-width: 300px;
-  margin: 10px;
-}
-
-
-.video_link{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.video_thumbnail{
-  border-radius: 5%;
-  border: 1px solid gainsboro;
-}
-
-.video_introduction{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: darkgray;
-  font-size: calc(5px + 1vmin);
-  padding-top: 5px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  /* border-top: 1px #282c34 solid; */
-}
-
-
 .project_title {
   padding: 30px;
   padding-bottom: 30px;

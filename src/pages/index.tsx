@@ -12,7 +12,7 @@ const Home = () => {
             <Hero />
             <div className="main">
                 <Main />
-                <PostList />
+                <PostList page="1" />
             </div>
             <Footer />
         </div>
