@@ -4,16 +4,22 @@ import 'react-toastify/dist/ReactToastify.css';
 import { getCookie } from '@/api/cookies';
 import { postCreate } from '@/api/v1/posts/create';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 
-export const Form = () => {
 
+const MarkDownEditor = dynamic(() => import("@uiw/react-md-editor"), {
+    ssr: false,
+});
+
+export const Editor = () => {
+    const [markdown, setMarkDown] = useState<string | undefined>("# Hello World");
     const PostSubmit = async (event: any) => {
         event.preventDefault();
 
         try {
             const data = {
                 title: event.target.title.value,
-                content: event.target.content.value,
+                content: markdown,
                 // thumbnail: '',
             }
             await postCreate(data);
@@ -29,12 +35,13 @@ export const Form = () => {
     return (
         <div className={styles.editor_section}>
             <form method="post" onSubmit={PostSubmit}>
-                <div className={styles.signup_row}>
+                <div className={styles.input_row}>
                     <label className={styles.input_label}>제목</label>
                     <input type="text" name="title" placeholder="제목" className={styles.input}></input>
                 </div>
                 <div className={styles.editor_body}>
-                    <textarea name="content" placeholder="내용" className={styles.input_body}></textarea>
+                    {/* <textarea name="content" placeholder="내용" className={styles.input_body}></textarea> */}
+                    <MarkDownEditor height={500} value={markdown} onChange={setMarkDown} />
                 </div>
                 <div className={styles.button_section}>
                     <button type="submit" className={styles.submit_button}> 작성 완료 </button>
@@ -44,4 +51,4 @@ export const Form = () => {
     );
 }
 
-export default Form;
+export default Editor;

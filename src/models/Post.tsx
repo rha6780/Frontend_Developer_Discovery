@@ -14,6 +14,15 @@ export interface PostListState {
 
 export interface PostCreatePayload {
     title: string;
-    content: string;
+    content: string | undefined;
     // thumbnail: null;
+}
+
+export interface PostDetailState {
+    id: number;
+    title: string;
+    content: string | undefined;
+    thumbnail: string;
+    user: string;
+    created_at: string;
 }
