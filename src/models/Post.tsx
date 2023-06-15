@@ -1,3 +1,5 @@
+import { PostUser } from "./User";
+
 export interface PostState {
     id: number;
     title: string;
@@ -21,8 +23,8 @@ export interface PostCreatePayload {
 export interface PostDetailState {
     id: number;
     title: string;
-    content: string | undefined;
+    content: string;
     thumbnail: string;
-    user: string;
     created_at: string;
+    author: PostUser;
 }

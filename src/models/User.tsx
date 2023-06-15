@@ -28,3 +28,8 @@ export interface ResetPasswordPayload {
     password: string;
     token: any;
 }
+
+export interface PostUser {
+    id: number;
+    name: string;
+}

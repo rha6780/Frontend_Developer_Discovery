@@ -52,6 +52,12 @@
     padding-bottom: 10px;
 }
 
+.markdown_section {
+    min-height: 300px;
+    border-bottom: solid 1px gainsboro;
+    margin-bottom: 10px;
+}
+
 .button_section {
     display: flex;
     justify-content: center;
