@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getAccessToken } from './cookies';
 
 // axios.defaults.withCredentials = true;
 
@@ -8,3 +9,9 @@ export const ApiClient = axios.create({
         'content-type': 'application/json',
     },
 });
+
+export function getAuthHeaders() {
+    return {
+        headers: { authorization: `Bearer ${getAccessToken()}` }
+    };
+}

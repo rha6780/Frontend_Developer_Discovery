@@ -1,10 +1,9 @@
 import { ApiClient } from '../../index';
-import { PostCreatePayload } from '../../../models/Post';
 import { getAuthHeaders } from '@/api/api_client';
 
-export const postCreate = async (postpayload: PostCreatePayload) => {
+export const postDelete = async (id: string | string[]) => {
     try {
-        const { data } = await ApiClient.post(`api/v1/posts/create`, postpayload, getAuthHeaders);
+        const { data } = await ApiClient.delete(`api/v1/posts/${id}`, getAuthHeaders);
         console.log(data);
         return data;
     } catch (error: any) {
