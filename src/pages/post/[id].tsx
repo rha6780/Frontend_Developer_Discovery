@@ -52,7 +52,7 @@ const Home = () => {
                 </div>
                 <div>{post?.thumbnail}</div>
                 <div className={styles.markdown_section}>
-                    <ReactMarkdown children={post?.content || content} />
+                    <ReactMarkdown>{post?.content || content}</ReactMarkdown>
                 </div>
 
                 <a href={"/post/edit/" + id} type="submit" className={styles.author_button}> 수정하기 </a>
