@@ -26,7 +26,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel-deploy": "next build && next export"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +54,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/react-syntax-highlighter": "^15.5.7",
     "babel-plugin-styled-components": "^2.0.7",
+    "eslint": "^8.42.0",
     "typescript": "4.9.5"
   }
 }

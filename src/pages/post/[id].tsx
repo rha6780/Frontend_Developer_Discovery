@@ -11,6 +11,7 @@ import Footer from '../../components/shared/Footer';
 
 import { PostDetailState } from '@/models/Post';
 import { postDetail } from '@/api/v1/posts/detail';
+import { postDelete } from '@/api/v1/posts/delete';
 
 export async function getServerSideProps({ params: { id } }: { params: { id: string } }) {
     return {
@@ -33,6 +34,11 @@ const Home = () => {
     }, []);
     const content = `## hello!`
 
+    const deletePost = async () => {
+        const result = await postDelete(id);
+        window.location.assign("/");
+    };
+
     return (
         <div>
             <NavBar />
@@ -50,7 +56,9 @@ const Home = () => {
                 </div>
 
                 <a href={"/post/edit/" + id} type="submit" className={styles.author_button}> 수정하기 </a>
-                <button type="submit" className={styles.author_button}> 삭제하기 </button>
+                <div className={styles.signup_last}>
+                    <button type="submit" className={styles.submit_button} onClick={deletePost}> 삭제하기 </button>
+                </div>
             </div >
             {/* <div>TODO : 댓글 관련 컴포넌트</div> */}
             <Footer />
