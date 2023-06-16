@@ -10,8 +10,4 @@ export const ApiClient = axios.create({
     },
 });
 
-export function getAuthHeaders() {
-    return {
-        headers: { authorization: `Bearer ${getAccessToken()}` }
-    };
-}
+export const authHeader = { headers: { "Authorization": `Bearer ${getAccessToken()}` } };

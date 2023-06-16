@@ -14,7 +14,7 @@ export const removeCookie = (name: string) => {
 }
 
 export function getAccessToken() {
-    return sessionStorage.getItem("access")
+    return typeof window !== 'undefined' ? sessionStorage.getItem('access') : null;
 }
 
 export function setAccessToken(token: string) {
