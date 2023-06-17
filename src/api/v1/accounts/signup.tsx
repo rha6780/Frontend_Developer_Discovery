@@ -4,11 +4,13 @@ import { UserState, SignUpPayload } from '../../../models/User';
 
 
 export const signUp = async (signUpPayload: SignUpPayload) => {
-    console.log('payload:', signUpPayload);
-
-    const { data } = await ApiClient.post<UserState>(`accounts/signup`, signUpPayload);
-    setAccessToken(data.token['access']);
-    setCookie('refresh_token', data.token['refresh'], { secure: true }); //httpOnly: true,
-    return data;
+    try {
+        const { data } = await ApiClient.post<UserState>(`accounts/signup`, signUpPayload);
+        setAccessToken(data.token['access']);
+        setCookie('refresh_token', data.token['refresh'], { secure: true }); // httpOnly: true,
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
 };
 

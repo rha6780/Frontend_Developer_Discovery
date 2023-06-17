@@ -3,8 +3,12 @@ import { getCookie, setAccessToken } from '@/api/cookies';
 
 
 export const refreshToken = async () => {
-    const { data } = await ApiClient.post(`api/v1/tokens/refresh`, { "refresh": getCookie('refresh_token') });
-    setAccessToken(data['access']);
-    return data;
+    try {
+        const { data } = await ApiClient.post(`api/v1/tokens/refresh`, { "refresh": getCookie('refresh_token') });
+        setAccessToken(data['access']);
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
 };
 

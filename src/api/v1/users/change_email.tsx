@@ -5,8 +5,12 @@ import { authHeader } from '@/api/api_client';
 
 
 export const userChangeEmail = async (emailChangePayload: EmailChangePayload) => {
-    refreshToken();
-    const { data } = await ApiClient.patch(`api/v1/users/email`, emailChangePayload, authHeader);
-    console.log(data);
-    return data;
+    try {
+        refreshToken();
+        const { data } = await ApiClient.patch(`api/v1/users/email`, emailChangePayload, authHeader);
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
 };
