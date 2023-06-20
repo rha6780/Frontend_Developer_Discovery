@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
   output: 'standalone',
   images: {
-    domains: ['127.0.0.1'],
+    domains: ['ec2-43-200-202-244.ap-northeast-2.compute.amazonaws.com'],
   },
   webpack: config => {
     config.module.rules.push(

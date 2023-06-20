@@ -4,7 +4,7 @@ import { getAccessToken } from './cookies';
 // axios.defaults.withCredentials = true;
 
 export const ApiClient = axios.create({
-    baseURL: "http://127.0.0.1:8000",
+    baseURL: "http://ec2-43-200-202-244.ap-northeast-2.compute.amazonaws.com",
     headers: {
         'content-type': 'application/json',
     },
