@@ -1,78 +1,75 @@
 .body {
-    min-height: 500px;
-    margin: 10% 5%;
-    /* display: flex; */
-    background-color: antiquewhite;
-    /* text-align: center; */
-    place-items: center;
-    /* justify-content: center; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 400px;
+    margin: 0 15%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(211, 220, 231); */
+    text-align: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
+    border-bottom: 1px solid black;
 }
 
 .info {
-    padding-left: 20px;
     padding-bottom: 10px;
 }
 
 .profile_container {
-    padding: 0px 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 80%;
+    overflow: hidden;
+    /* padding: 0px 10px; */
     border: 1px;
 }
 
-.signup_row {
-    padding-bottom: 30px;
-    min-width: 500px;
+.profile_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.row_label{
-    margin: 5px;
-    font-size: 15px;
-}
-
-.input {
-    min-width: 100%;
-    padding: 10px;
-    border-width: 2px;
-    border-style: inset;
-    border-color: gray;
-    border-radius: 5px;
-}
-
-.description {
-    color: gray;
-    font-size: 15px;
-}
-
-.signup_last {
+.name_container{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10px;
 }
 
-.submit_button {
+.name {
+    font-size: 1.5rem;
+}
+
+.icon {
+    margin-left: 10px;
+    padding-top: 5px;
+    width: 1.5rem;
+    height: 100%;
+}
+
+.function {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-content: center;
-    padding: 10px;
-    width: 50%;
-}
-
-.disable {
-    display: none;
 }
 
 .func_btn {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     color: initial;
     justify-content: center;
     align-content: center;
     padding: 10px;
-    border: solid 1px black;
-    border-radius: 5px;
+    margin: 5px;
     display: block;
+}
+
+.func_btn:hover {
+    text-decoration: underline;
+    text-decoration-color: gray;
 }

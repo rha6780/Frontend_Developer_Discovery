@@ -55,10 +55,12 @@ const Home = () => {
                     <ReactMarkdown>{post?.content || content}</ReactMarkdown>
                 </div>
 
-                <a href={"/post/edit/" + id} type="submit" className={styles.author_button}> 수정하기 </a>
-                <div className={styles.signup_last}>
-                    <button type="submit" className={styles.submit_button} onClick={deletePost}> 삭제하기 </button>
-                </div>
+                <a href={"/post/edit/" + id} type="submit" className={styles.author_button}>
+                    <img src="/edit_icon.png"></img>
+                </a>
+                <a onClick={deletePost} type="submit" className={styles.author_button}>
+                    <img src="/delete_icon.png"></img>
+                </a>
             </div >
             {/* <div>TODO : 댓글 관련 컴포넌트</div> */}
             <Footer />

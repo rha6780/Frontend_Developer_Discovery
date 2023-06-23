@@ -38,12 +38,13 @@ export const PostList = (props: any) => {
                                     {/* <div className={styles.recommended}>{post.content}</div> */}
                                 </div>
                                 <div className={styles.right_item}>
-                                    <img className={styles.post_thumbnail} src={post.thumbnail} height='200px' width='300px' />
+                                    {/* <img className={styles.post_thumbnail} src={post.thumbnail} height='200px' width='300px' /> */}
                                 </div>
                             </a>
                         </div>
                     ))
                 }</div>}
+                <div></div>
             </div>
         </div >
     );

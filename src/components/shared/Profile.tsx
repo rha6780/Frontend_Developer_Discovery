@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from 'react';
 import { UserState } from '@/models/User';
 import { userCurrent } from '@/api/v1/users/current';
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 
 
 const Profile = () => {
@@ -19,28 +20,27 @@ const Profile = () => {
     return (
         <div className="main">
             <div className={styles.body}>
-                <div className={styles.profile_img}>
-                    <Image src='/data_quantity.png' height='200px' width='350px' />
+                <div>
+                    <div className={styles.profile_container}>
+                        <Image className={styles.profile_img} src='/user_icon.png' height='150px' width='150px' />
+                    </div>
+                    <div className={styles.info}>
+                        {<div>{
+                            <div key={user_data?.id}>
+                                <div className={styles.name_container}>
+                                    <div className={styles.name}>{user_data?.name}</div>
+                                    <a href="#"><img className={styles.icon} src="/edit_icon.png"></img></a>
+                                </div>
+                                <div>✉️ {user_data?.email}</div>
+                            </div>
+                        }</div>}
+                    </div>
                 </div>
-                <div className={styles.info}>
-                    <span>
-                    </span>
-                    <br />
-                    {<div>{
-                        <div key={user_data?.id}>
-                            <div>이메일 : {user_data?.email}</div>
-                            <div>이름 : {user_data?.name}</div>
-                        </div>
-                    }</div>}
-                </div>
-
-                <div className={styles.function}>
-                    <a href="/email_change" className={styles.func_btn}>이메일 변경</a>
-                    <br />
-                    <a href="#" className={styles.func_btn}>비밀번호 변경</a>
-                    <br />
-                    <a href="/withdrawal" className={styles.func_btn}>탈퇴하기</a>
-                </div>
+            </div>
+            <div className={styles.function}>
+                <a href="/email_change" className={styles.func_btn}>이메일 변경</a>
+                <a href="#" className={styles.func_btn}>비밀번호 변경</a>
+                <a href="/withdrawal" className={styles.func_btn}>탈퇴하기</a>
             </div>
         </div>
     );
