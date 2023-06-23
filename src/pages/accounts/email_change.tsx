@@ -1,6 +1,6 @@
-import NavBar from '../components/shared/NavBar';
-import Footer from '../components/shared/Footer';
-import EmailChange from '../components/shared/EmailChange';
+import NavBar from '@/components/shared/NavBar';
+import Footer from '@/components/shared/Footer';
+import EmailChange from '@/components/Account/EmailChange';
 import { ToastContainer } from 'react-toastify';
 
 

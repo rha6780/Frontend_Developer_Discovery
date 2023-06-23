@@ -23,9 +23,9 @@ export const WithDrawal = () => {
         <div className={styles.signup}>
             <div className={styles.title}>회원 탈퇴</div>
             <div className={styles.instruction}>
-                정말로 회원 탈퇴를 하실겁니까?
+                정말로 회원 탈퇴를 하시겠습니까?
             </div>
-            <div className={styles.body}>
+            <div className={styles.with_drawal_body}>
                 <form method="post" onSubmit={withDrawalSubmit}>
                     <div className={styles.signup_last}>
                         <button type="submit" className={styles.submit_button}> 확인 </button>

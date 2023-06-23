@@ -65,6 +65,12 @@
     border-color: black;
 }
 
+.with_drawal_body {
+    padding-top: 30px;
+    min-width: 100px;
+    min-height: 100vh;
+}
+
 .disable {
     display: none;
 }

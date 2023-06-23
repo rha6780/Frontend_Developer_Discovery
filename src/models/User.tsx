@@ -8,6 +8,10 @@ export interface EmailChangePayload {
     changed_email: string;
 }
 
+export interface PasswordChangePayload {
+    changed_password: string;
+}
+
 export interface SignUpPayload {
     email: string;
     name: string;

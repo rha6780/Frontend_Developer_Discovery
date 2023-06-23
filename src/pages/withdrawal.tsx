@@ -10,9 +10,7 @@ const Home = () => {
         <div>
             <ToastContainer />
             <NavBar />
-            <div className="main">
-                <WithDrawal />
-            </div>
+            <WithDrawal />
             <Footer />
         </div>
     );
