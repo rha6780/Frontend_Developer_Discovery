@@ -11,7 +11,6 @@ export const userCurrent = async () => {
         const { data } = await ApiClient.get<UserState>(`api/v1/users/current`, authHeader);
         return data;
     } else {
-        console.log('not login');
         return undefined;
     }
 };

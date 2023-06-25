@@ -13,12 +13,10 @@ export const SignIn = () => {
                 email: event.target.email.value,
                 password: event.target.password.value,
             }
-            await signIn(data);
-            toast.success('로그인 성공', {
-                position: "top-center",
-                autoClose: 1000,
-            });
-            window.location.assign("/");
+            const res = await signIn(data);
+            if (res.response.status === 200) {
+                window.location.assign("/");
+            }
         } catch (error) {
             toast.error('이메일과 비밀번호를 다시 확인해주세요', {
                 position: "top-center",

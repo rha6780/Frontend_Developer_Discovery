@@ -10,7 +10,7 @@ export const signIn = async (signInPayload: SignInPayload) => {
         setCookie('refresh_token', data.token['refresh'], { secure: true }); //httpOnly: true, 
         return data;
     } catch (error) {
-        console.log(error);
+        return error;
     }
 };
 

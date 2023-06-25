@@ -18,11 +18,14 @@ const PasswordChange = () => {
                 const data = {
                     changed_password: event.target.changed_password.value
                 }
-                await userChangePassword(data);
-                window.location.assign("/");
+                const res = await userChangePassword(data);
+                console.log(res);
+                if (res.msg === 'success!') {
+                    window.location.assign("/");
+                }
             }
         } catch (error) {
-            toast.error('서버가 불안정 합니다. 관리자에게 문의하세요.', {
+            toast.error('비밀번호 변경에 실패하였습니다.', {
                 position: "top-center",
                 autoClose: 2000,
             });
