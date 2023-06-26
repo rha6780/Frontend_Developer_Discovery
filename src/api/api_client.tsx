@@ -2,12 +2,11 @@ import axios from 'axios';
 import { getAccessToken, getCookie } from './cookies';
 import { refreshToken } from './v1/tokens/token_refresh';
 
-// axios.defaults.withCredentials = true;
 
 // TODO: stage 별로 url 등 변경할 수 있도록
 // http://developerdiscovery.com
 export const ApiClient = axios.create({
-    baseURL: "http://localhost:8000",
+    baseURL: "https://developerdiscovery.com",
     headers: {
         'content-type': 'application/json',
     },
