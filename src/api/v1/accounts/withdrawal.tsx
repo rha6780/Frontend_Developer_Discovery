@@ -5,7 +5,7 @@ import { authHeader } from '@/api/api_client';
 
 export const withDrawal = async () => {
     try {
-        const { data } = await ApiClient.post(`accounts/withdrawal`, authHeader);
+        const { data } = await ApiClient.post(`api/v1/accounts/withdrawal`, authHeader);
         setAccessToken("");
         removeCookie('access_token');
         removeCookie('refresh_token');
