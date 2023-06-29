@@ -65,6 +65,22 @@
     padding: 40px 0px;
 }
 
+.author_section{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0 10px;
+}
+
+.author_button {
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+.author_button:hover {
+    cursor:pointer;
+}
+
 .submit_button {
     justify-content: center;
     align-content: center;
@@ -77,3 +93,9 @@
     border-color: black;
 }
   
+.comment_label {
+    padding: 20px 0;
+    font-size: 1.0rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom: solid 1px gainsboro;
+}

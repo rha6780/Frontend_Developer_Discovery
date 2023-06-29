@@ -7,11 +7,15 @@ import styles from '../../../styles/Post.module.css'
 
 import NavBar from '../../components/shared/NavBar';
 import Footer from '../../components/shared/Footer';
+import Comment from '@/components/Comment/Comment';
+import Editor from '@/components/Comment/Editor';
 
 
 import { PostDetailState } from '@/models/Post';
+import { CommentState } from '@/models/Comment';
 import { postDetail } from '@/api/v1/posts/detail';
 import { postDelete } from '@/api/v1/posts/delete';
+import { commentList } from '@/api/v1/comments/list';
 
 export async function getServerSideProps({ params: { id } }: { params: { id: string } }) {
     return {
@@ -23,6 +27,7 @@ const Home = () => {
     const router = useRouter();
     const id = router.query.id || "0";
     const [post, setPostList] = useState<PostDetailState>();
+    const [comment_list, setCommentList] = useState<CommentState[]>();
 
     useEffect(() => {
         const initPostList = async () => {
@@ -30,8 +35,15 @@ const Home = () => {
             console.log(detail);
             setPostList(detail)
         };
+        const initCommentList = async () => {
+            const list = await commentList(1, id);
+            console.log(list);
+            setCommentList(list.results)
+        };
         initPostList();
+        initCommentList();
     }, []);
+
     const content = `## hello!`
 
     const deletePost = async () => {
@@ -54,15 +66,22 @@ const Home = () => {
                 <div className={styles.markdown_section}>
                     <ReactMarkdown>{post?.content || content}</ReactMarkdown>
                 </div>
-
-                <a href={"/post/edit/" + id} type="submit" className={styles.author_button}>
-                    <img src="/edit_icon.png"></img>
-                </a>
-                <a onClick={deletePost} type="submit" className={styles.author_button}>
-                    <img src="/delete_icon.png"></img>
-                </a>
+                <div className={styles.author_section}>
+                    <a onClick={deletePost} type="submit" className={styles.author_button}>
+                        🗑
+                    </a>
+                    <a href={"/post/edit/" + id} type="submit" className={styles.author_button}>
+                        ✏️
+                    </a>
+                </div>
+                <div><Editor /></div>
+                <div className={styles.comment_label}>댓글</div>
+                <div>
+                    {comment_list?.map(comment => (
+                        <Comment id={comment.id} content={comment.content} user={comment.user} created_at={comment.created_at} />
+                    ))}
+                </div>
             </div >
-            {/* <div>TODO : 댓글 관련 컴포넌트</div> */}
             <Footer />
         </div>
     );

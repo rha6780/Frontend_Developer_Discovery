@@ -5,8 +5,10 @@ import "@uiw/react-markdown-preview/markdown.css";
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 
-import { postCreate } from '@/api/v1/posts/create';
-import styles from '../../../styles/Post.module.css';
+import styles from '../../../styles/Comment.module.css';
+import { commentCreate } from '@/api/v1/comments/create';
+import { useRouter } from 'next/router';
+
 
 
 const MarkDownEditor = dynamic(() => import("@uiw/react-md-editor"), {
@@ -14,24 +16,24 @@ const MarkDownEditor = dynamic(() => import("@uiw/react-md-editor"), {
 });
 
 export const Editor = () => {
-    const [markdown, setMarkDown] = useState<string | undefined>("# Hello World");
-    const PostSubmit = async (event: any) => {
+    const router = useRouter();
+    const id = router.query.id || "0";
+    const [markdown, setMarkDown] = useState<string | undefined>("# 로그인하고 댓글을 남겨주세요");
+    const CommentSubmit = async (event: any) => {
         event.preventDefault();
 
         try {
-            if (event.target.title.value == '') {
-                toast.error('제목을 작성해주세요.', {
+            if (markdown === '') {
+                toast.error('내용을 작성해주세요.', {
                     position: "top-center",
                     autoClose: 2000,
                 });
             } else {
                 const data = {
-                    title: event.target.title.value,
                     content: markdown,
-                    // thumbnail: '',
                 }
-                await postCreate(data);
-                window.location.assign("/");
+                const res = await commentCreate(data, id);
+                // window.location.assign("/");
             }
         } catch (error) {
             toast.error('서버가 불안정 합니다. 관리자에게 문의하세요.', {
@@ -42,14 +44,10 @@ export const Editor = () => {
     }
 
     return (
-        <div className={styles.editor_section}>
-            <form method="post" onSubmit={PostSubmit}>
-                <div className={styles.input_row}>
-                    <label className={styles.input_label}>제목</label>
-                    <input type="text" name="title" placeholder="제목" className={styles.input}></input>
-                </div>
+        <div >
+            <form method="post" onSubmit={CommentSubmit}>
                 <div className={styles.editor_body}>
-                    <MarkDownEditor height={500} value={markdown} onChange={setMarkDown} />
+                    <MarkDownEditor height={180} value={markdown} onChange={setMarkDown} preview="edit" />
                 </div>
                 <div className={styles.button_section}>
                     <button type="submit" className={styles.submit_button}> 작성 완료 </button>
