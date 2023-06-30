@@ -42,7 +42,7 @@ const Home = () => {
         };
         initPostList();
         initCommentList();
-    }, []);
+    }, [id]);
 
     const content = `## hello!`
 
@@ -78,7 +78,7 @@ const Home = () => {
                 <div className={styles.comment_label}>댓글</div>
                 <div>
                     {comment_list?.map(comment => (
-                        <Comment id={comment.id} content={comment.content} user={comment.user} created_at={comment.created_at} />
+                        <Comment key={comment.id} content={comment.content} user={comment.user} created_at={comment.created_at} />
                     ))}
                 </div>
             </div >
