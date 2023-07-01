@@ -16,7 +16,7 @@ const Footer = () => {
                     <span className={styles.downcase}>iscovery</span>
                 </a>
                 <div className={styles.copyright}>
-                    Copyright : rha6780
+                    Copyright (C) 2023 rha6780
                 </div>
 
             </div>
