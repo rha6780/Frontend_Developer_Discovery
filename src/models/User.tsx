@@ -33,7 +33,7 @@ export interface ResetPasswordPayload {
     token: any;
 }
 
-export interface PostUser {
+export interface Author {
     id: number;
     name: string;
 }
