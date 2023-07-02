@@ -26,5 +26,60 @@
 }
 
 .comment_item {
-    padding: 20px;
+    padding: 10px 5px 20px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px gainsboro;
+}
+
+.comment_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.comment_author {
+    font-size: 1.2rem;
+}
+
+.comment_fuction {
+    font-size: 0.9rem;
+    color: grey;
+}
+.comment_fuction a{
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: grey;
+}
+.comment_content {
+    padding: 0 7px;
+    font-size: 0.9rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.comment_content h1{
+    font-size: 1rem;
+}
+.comment_content h2{
+    font-size: 0.9rem;
+}
+.comment_content h3{
+    font-size: 0.9rem;
+}
+.comment_content h4{
+    font-size: 0.9rem;
+}
+.comment_content h5{
+    font-size: 0.9rem;
+}
+.comment_content h6{
+    font-size: 0.9rem;
+}
+.comment_content code{
+    font-size: 0.9rem;
+    background-color: #c7dbeb;
+}
+.comment_content pre{
+    font-size: 0.9rem;
+    padding: 10px;
+    background-color: #c7dbeb;
 }

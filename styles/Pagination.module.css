@@ -1,0 +1,19 @@
+.page_selected {
+    font: bold;
+    background-color: antiquewhite;
+    padding: 0 1px;
+}
+
+.page_not_selected {
+    padding: 0 1px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination_item {
+    display: block;
+    padding: 10px;
+}

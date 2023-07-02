@@ -33,7 +33,11 @@ export const Editor = () => {
                     content: markdown,
                 }
                 const res = await commentCreate(data, id);
-                // window.location.assign("/");
+                console.log(res);
+                // TODO: 에러 처리 방법 고려, reload 페이지 단위가 아닌 컴포넌트 단위로 이루어지도록 수정
+                if (res['error'] === undefined) {
+                    window.location.reload();
+                }
             }
         } catch (error) {
             toast.error('서버가 불안정 합니다. 관리자에게 문의하세요.', {

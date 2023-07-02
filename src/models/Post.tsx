@@ -1,4 +1,4 @@
-import { PostUser } from "./User";
+import { Author } from "./User";
 
 export interface PostState {
     id: number;
@@ -26,5 +26,5 @@ export interface PostDetailState {
     content: string;
     thumbnail: string;
     created_at: string;
-    author: PostUser;
+    author: Author;
 }

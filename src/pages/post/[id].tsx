@@ -7,15 +7,16 @@ import styles from '../../../styles/Post.module.css'
 
 import NavBar from '../../components/shared/NavBar';
 import Footer from '../../components/shared/Footer';
-import Comment from '@/components/Comment/Comment';
+import CommentList from '@/components/Comment/List';
 import Editor from '@/components/Comment/Editor';
-
+import Pagination from '@/components/shared/Pagination';
 
 import { PostDetailState } from '@/models/Post';
 import { CommentState } from '@/models/Comment';
 import { postDetail } from '@/api/v1/posts/detail';
 import { postDelete } from '@/api/v1/posts/delete';
 import { commentList } from '@/api/v1/comments/list';
+
 
 export async function getServerSideProps({ params: { id } }: { params: { id: string } }) {
     return {
@@ -75,12 +76,8 @@ const Home = () => {
                     </a>
                 </div>
                 <div><Editor /></div>
-                <div className={styles.comment_label}>댓글</div>
-                <div>
-                    {comment_list?.map(comment => (
-                        <Comment key={comment.id} content={comment.content} user={comment.user} created_at={comment.created_at} />
-                    ))}
-                </div>
+                {/* <div className={styles.comment_label}>댓글({comment_list?.length})</div> */}
+                <div><CommentList page={1} id={id}></CommentList></div>
             </div >
             <Footer />
         </div>

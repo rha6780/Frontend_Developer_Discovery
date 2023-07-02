@@ -1,20 +1,34 @@
 import styles from '../../../styles/PostList.module.css'
+import pagination_styles from '../../../styles/Pagination.module.css'
+
 import { postList } from '@/api/v1/posts/list';
 import { useEffect, useState } from 'react';
 import { PostState } from '../../models/Post';
 
+import Pagination from '@/components/shared/Pagination';
+
 export const PostList = (props: any) => {
+    const [page, setPage] = useState(props.page);
+    const [count, setCount] = useState(1);
     const [post_list, setPostList] = useState<PostState[]>();
 
     useEffect(() => {
         const initPostList = async () => {
             const page = props.page;
             const list = await postList(page);
-            console.log(list);
-            setPostList(list.results)
+            setCount(list.count);
+            setPostList(list.results);
         };
         initPostList();
     }, []);
+
+    useEffect(() => {
+        const initPostList = async () => {
+            const list = await postList(page);
+            setPostList(list.results);
+        };
+        initPostList();
+    }, [page]);
 
     return (
         <div>
@@ -44,7 +58,9 @@ export const PostList = (props: any) => {
                         </div>
                     ))
                 }</div>}
-                <div></div>
+                <div className={pagination_styles.pagination}>
+                    <Pagination page={page} numPages={Math.ceil(count / 10)} next={setPage} className={pagination_styles.pagination_item}></Pagination>
+                </div>
             </div>
         </div >
     );

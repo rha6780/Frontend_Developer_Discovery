@@ -14,7 +14,8 @@ export const SignIn = () => {
                 password: event.target.password.value,
             }
             const res = await signIn(data);
-            if (res.response.status === 200) {
+            console.log(res["message"]);
+            if (res["message"] === 'login success') {
                 window.location.assign("/");
             } else {
                 toast.error('이메일과 비밀번호를 다시 확인해주세요', {
