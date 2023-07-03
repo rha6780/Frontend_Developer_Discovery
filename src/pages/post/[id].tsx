@@ -69,10 +69,11 @@ const Home = () => {
                 </div>
                 <div className={styles.author_section}>
                     <a onClick={deletePost} type="submit" className={styles.author_button}>
-                        🗑
+                        삭제
                     </a>
+                    |
                     <a href={"/post/edit/" + id} type="submit" className={styles.author_button}>
-                        ✏️
+                        수정
                     </a>
                 </div>
                 <div><Editor /></div>

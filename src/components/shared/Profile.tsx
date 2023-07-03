@@ -38,8 +38,8 @@ const Profile = () => {
                 </div>
             </div>
             <div className={styles.function}>
-                <a href="/accounts/email_change" className={styles.func_btn}>이메일 변경</a>
-                <a href="/accounts/password_change" className={styles.func_btn}>비밀번호 변경</a>
+                <a href="/accounts/email-change" className={styles.func_btn}>이메일 변경</a>
+                <a href="/accounts/password-change" className={styles.func_btn}>비밀번호 변경</a>
                 <a href="/withdrawal" className={styles.func_btn}>탈퇴하기</a>
             </div>
         </div>

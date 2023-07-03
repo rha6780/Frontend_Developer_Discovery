@@ -17,3 +17,12 @@
     display: block;
     padding: 10px;
 }
+
+.able {
+    display: block;
+}
+
+.pagination .disable {
+    display: none;
+}
+
