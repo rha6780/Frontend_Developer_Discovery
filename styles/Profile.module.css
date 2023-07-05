@@ -22,14 +22,18 @@
     height: 150px;
     border-radius: 80%;
     overflow: hidden;
-    /* padding: 0px 10px; */
     border: 1px;
+    margin-bottom: 10px;
 }
 
 .profile_img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+}
+
+.disable {
+    display: none;
 }
 
 .name_container{

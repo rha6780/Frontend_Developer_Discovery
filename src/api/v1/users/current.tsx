@@ -8,7 +8,7 @@ import axios from 'axios';
 
 export const userCurrent = async () => {
     if (getCookie('refresh_token')) {
-        const { data } = await ApiClient.get<UserState>(`api/v1/users/current`, authHeader);
+        const { data } = await ApiClient.get<UserState>(`api/v1/users`, authHeader);
         setUsername(data.name);
         return data;
     } else {

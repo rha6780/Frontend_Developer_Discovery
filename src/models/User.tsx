@@ -2,10 +2,12 @@ export interface UserState {
     id: number;
     email: string;
     name: string;
+    image: string;
 }
 
 export interface EmailChangePayload {
     changed_email: string;
+    changed_name: string;
 }
 
 export interface PasswordChangePayload {
@@ -31,6 +33,10 @@ export interface EmailCheckPayload {
 export interface ResetPasswordPayload {
     password: string;
     token: any;
+}
+
+export interface UserImagePayload {
+    image: File;
 }
 
 export interface Author {

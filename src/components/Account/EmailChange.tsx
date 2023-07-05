@@ -9,7 +9,8 @@ const EmailChange = () => {
         event.preventDefault();
         try {
             const data = {
-                changed_email: event.target.changed_email.value
+                changed_email: event.target.changed_email.value,
+                changed_name: ''
             }
             await userChangeEmail(data);
             window.location.assign("/");
@@ -20,7 +21,6 @@ const EmailChange = () => {
             });
             console.log(error);
         }
-
     }
 
     return (
