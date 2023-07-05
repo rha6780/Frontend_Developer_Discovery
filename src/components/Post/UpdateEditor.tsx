@@ -59,7 +59,7 @@ export const UpdateEditor = (props: any) => {
                     // thumbnail: '',
                 }
                 await postUpdate(id, data);
-                window.location.assign("/");
+                window.location.assign(`/post/${id}`);
             }
         } catch (error) {
             toast.error('서버가 불안정 합니다. 관리자에게 문의하세요.', {

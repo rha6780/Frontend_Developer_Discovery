@@ -32,7 +32,8 @@ export const Comment = (props: any) => {
                 content: markdown
             }
             await commentUpdate(props.post_id, props.id, data);
-            window.location.reload;
+            setIsEdit(false);
+            window.location.reload();
         } catch (error) {
             alert("서버가 불안정 합니다. 관리자에게 문의하세요.");
             console.log(error);
@@ -43,7 +44,7 @@ export const Comment = (props: any) => {
         event.preventDefault();
         try {
             await commentDelete(props.post_id, props.id);
-            window.location.reload;
+            window.location.reload();
         } catch (error) {
             alert("서버가 불안정 합니다. 관리자에게 문의하세요.");
             console.log(error);
