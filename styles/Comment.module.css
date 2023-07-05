@@ -25,6 +25,10 @@
     border-color: black;
 }
 
+.disable{
+    display: none;
+}
+
 .comment_item {
     padding: 10px 5px 20px;
     margin-bottom: 10px;
@@ -43,6 +47,9 @@
 }
 
 .comment_fuction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: 0.9rem;
     color: grey;
 }
@@ -50,7 +57,13 @@
     font-size: 0.8rem;
     text-decoration: none;
     color: grey;
+    padding: 0 5px;
 }
+
+.comment_fuction a:hover {
+    cursor:pointer;
+}
+
 .comment_content {
     padding: 0 7px;
     font-size: 0.9rem;

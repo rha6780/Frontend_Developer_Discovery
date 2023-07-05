@@ -15,7 +15,7 @@ import { PostDetailState } from '@/models/Post';
 import { CommentState } from '@/models/Comment';
 import { postDetail } from '@/api/v1/posts/detail';
 import { postDelete } from '@/api/v1/posts/delete';
-import { commentList } from '@/api/v1/comments/list';
+import { getUsername } from '@/api/v1/users/current';
 
 
 export async function getServerSideProps({ params: { id } }: { params: { id: string } }) {
@@ -28,21 +28,15 @@ const Home = () => {
     const router = useRouter();
     const id = router.query.id || "0";
     const [post, setPostList] = useState<PostDetailState>();
-    const [comment_list, setCommentList] = useState<CommentState[]>();
+    const [isAuthor, setIsAuthor] = useState(false);
 
     useEffect(() => {
         const initPostList = async () => {
             const detail = await postDetail(id);
-            console.log(detail);
-            setPostList(detail)
-        };
-        const initCommentList = async () => {
-            const list = await commentList(1, id);
-            console.log(list);
-            setCommentList(list.results)
+            setPostList(detail);
+            setIsAuthor(detail.author.name === getUsername());
         };
         initPostList();
-        initCommentList();
     }, [id]);
 
     const content = `## hello!`
@@ -67,8 +61,8 @@ const Home = () => {
                 <div className={styles.markdown_section}>
                     <ReactMarkdown>{post?.content || content}</ReactMarkdown>
                 </div>
-                <div className={styles.author_section}>
-                    <a onClick={deletePost} type="submit" className={styles.author_button}>
+                <div className={isAuthor ? styles.author_section : styles.disable}>
+                    <a onClick={deletePost} className={styles.author_button}>
                         삭제
                     </a>
                     |

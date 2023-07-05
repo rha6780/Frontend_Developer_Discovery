@@ -19,6 +19,9 @@
     /* margin: 10px calc(20px + 1vmin); */
 }
 
+.disable {
+    display: none;
+}
 
 .input_row {
     padding-bottom: 10px;

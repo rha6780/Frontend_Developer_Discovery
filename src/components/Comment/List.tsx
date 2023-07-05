@@ -40,7 +40,7 @@ export const CommentList = (props: any) => {
             <div className={styles.comment_label}>댓글({count})</div>
             <div>
                 {comment_list?.map(comment => (
-                    <Comment key={comment.id} content={comment.content} author={comment.author} created_at={comment.created_at} />
+                    <Comment key={comment.id} post_id={id} id={comment.id} content={comment.content} author={comment.author} created_at={comment.created_at} />
                 ))}
             </div>
             <div className={pagination_styles.pagination}>
