@@ -39,6 +39,10 @@ export interface UserImagePayload {
     image: File;
 }
 
+export interface UserImageState {
+    image: string;
+}
+
 export interface Author {
     id: number;
     name: string;

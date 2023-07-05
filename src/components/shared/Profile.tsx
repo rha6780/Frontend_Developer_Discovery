@@ -2,7 +2,7 @@ import styles from '../../../styles/Profile.module.css'
 
 import { SyntheticEvent, useEffect, useState } from 'react';
 import { FileDrop } from 'react-file-drop'
-import { UserState } from '@/models/User';
+import { UserImageState, UserState } from '@/models/User';
 import { userCurrent } from '@/api/v1/users/current';
 import { updateImage } from '@/api/v1/users/update_image';
 import { getAccessToken } from '@/api/cookies';
@@ -42,8 +42,10 @@ const Profile = () => {
                 alert("5MB 이상 파일은 업로드가 불가능합니다.");
             }
             else if (files[0].type == 'image/png' || files[0].type == 'image/jpeg' || files[0].type == 'image/jpg') {
-                updateImage(formdata, headers);
-                // window.location.reload();
+                const res = updateImage(formdata, headers);
+                if (res != undefined) {
+                    window.location.reload();
+                }
             }
             else {
                 alert("png, jpg, jpeg 파일이 아닙니다.");
