@@ -6,12 +6,11 @@ import { getCookie } from '@/api/cookies';
 import axios, { AxiosRequestHeaders } from 'axios';
 
 
-export const updateImage = async (imagepayload: FormData, headers: AxiosRequestHeaders) => {
+export const updateCommentImage = async (id: string | string[], imagepayload: FormData, headers: AxiosRequestHeaders) => {
     try {
-        const { data } = await ApiClient.patch<UserImageState>(`api/v1/users/image`, imagepayload, { headers });
-        console.log()
+        const { data } = await ApiClient.patch<UserImageState>(`api/v1/posts/${id}/comments/image`, imagepayload, { headers });
         return data;
     } catch {
-        return undefined;
+        return { image: '/user_icon.png' };
     }
 };

@@ -10,6 +10,7 @@ import { getAccessToken } from '@/api/cookies';
 import { userChangeEmail } from '@/api/v1/users/change_email';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AxiosRequestHeaders } from 'axios';
 
 
 
@@ -36,15 +37,21 @@ const Profile = () => {
                 "image",
                 files[0],
             )
-            const headers = { haeders: { "Content-Type": files[0].type, "Authorization": `Bearer ${getAccessToken()}` } }
+
+            const headers: AxiosRequestHeaders = {
+                'Content-Type': files[0].type,
+                "Authorization": `Bearer ${getAccessToken()}`,
+            }
+
             console.log(headers);
             if (files[0].size >= 5000000) {
                 alert("5MB 이상 파일은 업로드가 불가능합니다.");
             }
             else if (files[0].type == 'image/png' || files[0].type == 'image/jpeg' || files[0].type == 'image/jpg') {
                 const res = updateImage(formdata, headers);
+                console.log(res);
                 if (res != undefined) {
-                    window.location.reload();
+                    // window.location.reload();
                 }
             }
             else {

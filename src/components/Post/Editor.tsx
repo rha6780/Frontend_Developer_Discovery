@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
-import { useState } from 'react';
+import { FileDrop } from 'react-file-drop'
 import dynamic from 'next/dynamic';
 
 import { postCreate } from '@/api/v1/posts/create';
 import styles from '../../../styles/Post.module.css';
+import { updatePostImage } from '@/api/v1/posts/image';
+import { getAccessToken } from '@/api/cookies';
+import { UserImageState } from '@/models/User';
+import { AxiosRequestHeaders } from 'axios';
 
 
 const MarkDownEditor = dynamic(() => import("@uiw/react-md-editor"), {
@@ -15,6 +20,8 @@ const MarkDownEditor = dynamic(() => import("@uiw/react-md-editor"), {
 
 export const Editor = () => {
     const [markdown, setMarkDown] = useState<string | undefined>("# Hello World");
+    const [uploadImage, setImage] = useState<UserImageState>();
+
     const PostSubmit = async (event: any) => {
         event.preventDefault();
 
@@ -41,6 +48,34 @@ export const Editor = () => {
         }
     }
 
+    const ImageUpload = async (files: FileList | null, event: any) => {
+        if (files != null) {
+            const formdata = new FormData();
+            formdata.append(
+                "image",
+                files[0],
+            )
+
+            const headers: AxiosRequestHeaders = {
+                'Content-Type': files[0].type,
+                "Authorization": `Bearer ${getAccessToken()}`,
+            }
+
+            if (files[0].size >= 5000000) {
+                alert("5MB 이상 파일은 업로드가 불가능합니다.");
+            }
+            else if (files[0].type == 'image/png' || files[0].type == 'image/jpeg' || files[0].type == 'image/jpg') {
+                const res = await updatePostImage(formdata, headers);
+                setImage(res);
+                const content = markdown + "\n\n ![" + files[0].name + "](http://localhost:8000" + uploadImage?.image + ")";
+                setMarkDown(content);
+            }
+            else {
+                alert("png, jpg, jpeg 파일이 아닙니다.");
+            }
+        }
+    }
+
     return (
         <div className={styles.editor_section}>
             <form method="post" onSubmit={PostSubmit}>
@@ -49,7 +84,10 @@ export const Editor = () => {
                     <input type="text" name="title" placeholder="제목" className={styles.input}></input>
                 </div>
                 <div className={styles.editor_body}>
-                    <MarkDownEditor height={500} value={markdown} onChange={setMarkDown} />
+                    <FileDrop
+                        onDrop={ImageUpload}>
+                        <MarkDownEditor height={500} value={markdown} onChange={setMarkDown} />
+                    </FileDrop>
                 </div>
                 <div className={styles.button_section}>
                     <button type="submit" className={styles.submit_button}> 작성 완료 </button>

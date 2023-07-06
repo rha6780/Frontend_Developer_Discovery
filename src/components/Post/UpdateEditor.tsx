@@ -11,6 +11,11 @@ import { postUpdate } from '@/api/v1/posts/update';
 import { postDetail } from '@/api/v1/posts/detail';
 
 import { PostDetailState } from '@/models/Post';
+import { UserImageState } from "@/models/User";
+import { updatePostImage } from "@/api/v1/posts/image";
+import { FileDrop } from "react-file-drop";
+import { getAccessToken } from "@/api/cookies";
+import { AxiosRequestHeaders } from "axios";
 
 const MarkDownEditor = dynamic(() => import("@uiw/react-md-editor"), {
     ssr: false,
@@ -28,6 +33,7 @@ export const UpdateEditor = (props: any) => {
     const id = router.query.id || props.id;
     const [markdown, setMarkDown] = useState<string | undefined>("hihi");
     const [post, setPost] = useState<PostDetailState>();
+    const [uploadImage, setImage] = useState<UserImageState>();
 
     useEffect(() => {
         const initPostDetail = async () => {
@@ -69,6 +75,35 @@ export const UpdateEditor = (props: any) => {
         }
     }
 
+    const ImageUpload = async (files: FileList | null, event: any) => {
+        if (files != null) {
+            const formdata = new FormData();
+            formdata.append(
+                "image",
+                files[0],
+            )
+
+            const headers: AxiosRequestHeaders = {
+                'Content-Type': files[0].type,
+                "Authorization": `Bearer ${getAccessToken()}`,
+            }
+
+            if (files[0].size >= 5000000) {
+                alert("5MB 이상 파일은 업로드가 불가능합니다.");
+            }
+            else if (files[0].type == 'image/png' || files[0].type == 'image/jpeg' || files[0].type == 'image/jpg') {
+                const res = await updatePostImage(formdata, headers);
+                console.log(res);
+                setImage(res);
+                const content = markdown + "\n\n ![" + files[0].name + "](http://localhost:8000" + uploadImage?.image + ")";
+                setMarkDown(content);
+            }
+            else {
+                alert("png, jpg, jpeg 파일이 아닙니다.");
+            }
+        }
+    }
+
     return (
         <div className={styles.editor_section}>
             <form method="post" onSubmit={PostSubmit}>
@@ -78,7 +113,10 @@ export const UpdateEditor = (props: any) => {
                 </div>
                 {props.content}
                 <div className={styles.editor_body}>
-                    <MarkDownEditor height={500} value={markdown} onChange={setMarkDown} />
+                    <FileDrop
+                        onDrop={ImageUpload}>
+                        <MarkDownEditor height={500} value={markdown} onChange={setMarkDown} />
+                    </FileDrop>
                 </div>
                 <div className={styles.button_section}>
                     <button type="submit" className={styles.submit_button}> 수정 완료 </button>
