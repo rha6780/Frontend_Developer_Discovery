@@ -1,8 +1,19 @@
 # Frontend Developer Discovery
-- [🔗 사이트 접속](https://frontend-developer-discovery.vercel.app/)
-- [Backend 프로젝트](https://github.com/rha6780/Backend_Developer_Discovery) 의 API를 받아 프론트를 구성합니다.
-- SSR 방식으로 구성되고 별도의 node 서버가 존재합니다.
-- vercel 에서 임의로 배포 중입니다.
+- Developer Discovery의 프론트 화면을 설계하고 개발합니다.
+- SSR 방식으로 구성되고 Vercel에 배포하고 있습니다.
+
+<br>
+
+### 연계 프로젝트
+
+- 백엔드 
+  - [BackendDeveloperDiscovery](https://github.com/rha6780/Backend_Developer_Discovery)
+  - Python, Django
+
+- 인프라
+  - [InfraDeveloperDiscovery](https://github.com/rha6780/Infra_Developer_Discovery) 
+  - Terraform, AWS
+
 
 <br>
 
@@ -26,9 +37,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 <details>
-<summary>amplify</summary>
+<summary>amplify(deprecated)</summary>
 
-- amplify가 비용이 너무 많이 들어서 다른 방법을 탐색중입니다.
+- amplify가 비용이 너무 많이 들어서 제거합니다.
 - `npm install aws-amplify` 를 통해 amplify 배포 설정을 초기화 하거나 수정할 수 있습니다.
 - 새로운 브랜치에 배포 설정을 하려면 aws amplify 서비스에 접속해 해당 브랜치를 선택해 빌드 배포 설정을 합니다.
   ```
