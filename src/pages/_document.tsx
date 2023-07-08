@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Seo from '@/components/shared/SEO'
 
 export default function Document() {
   return (
