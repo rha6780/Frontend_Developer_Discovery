@@ -15,9 +15,9 @@ export default function Document() {
         <meta property="og:title" content="developerdiscovery" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://developerdiscovery.com" />
-        <meta property="og:image" content="/favicon.ico" />
+        {/* <meta property="og:image" content="/favicon.ico" /> */}
         <meta property="og:article:author" content="rha6780" />
-        <link rel="shortcut icon" href="/favicon.ico"></link>
+        {/* <link rel="shortcut icon" href="/favicon.ico"></link> */}
       </Head>
       <body>
         <Main />
