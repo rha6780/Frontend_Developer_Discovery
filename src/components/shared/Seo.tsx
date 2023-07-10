@@ -4,6 +4,7 @@ export const Seo = () => {
 
     return (
         <Head>
+            <title>developerdiscovery</title>
             <meta name="description" content="개발자들의 유용한 정보를 공유하자!" />
             <meta property="og:title" content="developerdiscovery" />
             <meta property="og:type" content="website" />
