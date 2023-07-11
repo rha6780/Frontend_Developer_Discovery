@@ -6,8 +6,8 @@ import { refreshToken } from './v1/tokens/token_refresh';
 // TODO: stage 별로 url 등 변경할 수 있도록
 // http://developerdiscovery.com
 export const ApiClient = axios.create({
-    // baseURL: "https://developerdiscovery.com",
-    baseURL: "http://localhost:8000",
+    baseURL: "https://developerdiscovery.com",
+    // baseURL: "http://localhost:8000",
     headers: {
         'content-type': 'application/json',
     },
