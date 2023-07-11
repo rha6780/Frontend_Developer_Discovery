@@ -73,7 +73,7 @@ export const Editor = () => {
             else if (files[0].type == 'image/png' || files[0].type == 'image/jpeg' || files[0].type == 'image/jpg') {
                 const res = await updateCommentImage(id, formdata, headers);
                 setImage(res);
-                const content = markdown + "\n\n ![" + files[0].name + "](http://developerdiscovery.com/image" + uploadImage?.image + ")";
+                const content = markdown + "\n\n ![" + files[0].name + "](http://developerdiscovery.com/media/prod" + uploadImage?.image + ")";
                 setMarkDown(content);
             }
             else {
