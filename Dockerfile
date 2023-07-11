@@ -1,7 +1,7 @@
 # Frontend/Dockerfile
 
 # pull official base image
-FROM node:16.14.1-alpine
+FROM node:16.20.1-alpine
 
 # set working directory
 RUN mkdir -p /Frontend_Developer_Discovery
