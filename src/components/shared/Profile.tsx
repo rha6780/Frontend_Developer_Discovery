@@ -18,7 +18,7 @@ const Profile = () => {
     const [user_data, setUserData] = useState<UserState>();
     const [isEdit, setIsEdit] = useState(false);
     const showDefaultImg = (e: SyntheticEvent<HTMLImageElement, Event>) => {
-        e.currentTarget.src = '/user_icon.png';
+        e.currentTarget.src = '/image/user_icon.png';
     };
 
     useEffect(() => {
@@ -102,7 +102,7 @@ const Profile = () => {
                             <div key={user_data?.id}>
                                 <div className={isEdit ? styles.disable : styles.name_container}>
                                     <div className={styles.name}>{user_data?.name}</div>
-                                    <a onClick={nameEdit}><img className={styles.icon} src="/edit_icon.png"></img></a>
+                                    <a onClick={nameEdit}><img className={styles.icon} src="/image/edit_icon.png"></img></a>
                                 </div>
                                 <div className={isEdit ? styles.name_container : styles.disable}>
                                     <form onSubmit={changeUser}>

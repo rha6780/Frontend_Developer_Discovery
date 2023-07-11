@@ -95,7 +95,7 @@ export const UpdateEditor = (props: any) => {
                 const res = await updatePostImage(formdata, headers);
                 console.log(res);
                 setImage(res);
-                const content = markdown + "\n\n ![" + files[0].name + "](http://localhost:8000" + uploadImage?.image + ")";
+                const content = markdown + "\n\n ![" + files[0].name + "](http://developerdiscovery.com/image" + uploadImage?.image + ")";
                 setMarkDown(content);
             }
             else {
