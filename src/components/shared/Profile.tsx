@@ -18,7 +18,7 @@ const Profile = () => {
     const [user_data, setUserData] = useState<UserState>();
     const [isEdit, setIsEdit] = useState(false);
     const showDefaultImg = (e: SyntheticEvent<HTMLImageElement, Event>) => {
-        e.currentTarget.src = '/media/prod/user_icon.png';
+        e.currentTarget.src = 'http://developerdiscovery.com/media/prod/user_icon.png';
     };
 
     useEffect(() => {
