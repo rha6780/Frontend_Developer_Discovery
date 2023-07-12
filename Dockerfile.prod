@@ -1,0 +1,25 @@
+# Frontend/Dockerfile
+
+# pull official base image
+FROM node:16.20.1-alpine
+
+# set working directory
+RUN mkdir -p .
+WORKDIR .
+
+# add `/usr/src/app/node_modules/.bin` to $PATH
+ENV PATH ./node_modules/.bin:$PATH
+
+# install and cache app dependencies
+COPY package*.json .
+RUN npm ci --legacy-peer-deps
+RUN npm install react-scripts@4.0.0 -g --silent
+
+COPY . .
+
+# RUN npm run build
+EXPOSE 3000
+
+ENV PORT 3000
+
+CMD ["npm", "start"]
