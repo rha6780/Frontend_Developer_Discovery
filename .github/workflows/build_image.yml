@@ -6,7 +6,7 @@ env:
   USER: github-action
   AWS_REGION: ap-northeast-2
   ECR_REPOSITORY: developer_discovery_repository
-  IMAGE_TAG: front:latest
+  IMAGE_TAG: latest
 
 jobs:
   build_image:
