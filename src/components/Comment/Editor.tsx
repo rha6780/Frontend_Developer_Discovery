@@ -25,7 +25,7 @@ export const Editor = () => {
     const id = router.query.id || "0";
     const [markdown, setMarkDown] = useState<string | undefined>("# 로그인하고 댓글을 남겨주세요");
     const [uploadImage, setImage] = useState<UserImageState>();
-    console.log(window.location.hostname);
+
 
     const CommentSubmit = async (event: any) => {
         event.preventDefault();
