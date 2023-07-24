@@ -39,7 +39,7 @@ WORKDIR .
 
 COPY . .
 COPY --from=deps node_modules ./Frontend_Developer_Discovery/node_modules
-package.json ./Frontend_Developer_Discovery/package.json
+COPY --from=deps package.json ./Frontend_Developer_Discovery/package.json
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
