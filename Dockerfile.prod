@@ -45,16 +45,15 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
 FROM node:16.20.1-alpine AS runner
-WORKDIR .
+WORKDIR Frontend_Developer_Discovery
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
-
 # RUN addgroup --system --gid 1001 nodejs
 # RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder .next ./Frontend_Developer_Discovery/.next
-COPY --from=builder node_modules ./Frontend_Developer_Discovery/node_modules
+COPY --from=builder ./Frontend_Developer_Discovery/node_modules ./Frontend_Developer_Discovery/node_modules
 COPY --from=builder package.json ./Frontend_Developer_Discovery/package.json
 
 # USER nextjs
