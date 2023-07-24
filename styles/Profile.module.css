@@ -18,7 +18,7 @@
 }
 
 .profile_container {
-    width: 150px;
+    /* width: 150px; */
     height: 150px;
     border-radius: 80%;
     overflow: hidden;
