@@ -1,26 +1,62 @@
 # Frontend/Dockerfile
 
-# pull official base image
-FROM node:16.20.1-alpine
+# # pull official base image
+# FROM node:16.20.1-alpine
 
-# set working directory
-RUN mkdir -p .
+# # set working directory
+# RUN mkdir -p .
+# WORKDIR .
+
+# # add `/usr/src/app/node_modules/.bin` to $PATH
+# ENV PATH ./node_modules/.bin:$PATH
+
+# # install and cache app dependencies
+# COPY package*.json ./
+# RUN npm ci --legacy-peer-deps
+# RUN npm install react-scripts@4.0.0 -g --silent
+
+# COPY . .
+
+# # RUN npm run build
+# EXPOSE 3000
+
+# ENV PORT 3000
+
+# ---
+
+FROM node:16.20.1-alpine AS deps
+RUN apk add --no-cache libc6-compat
 WORKDIR .
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH ./node_modules/.bin:$PATH
+COPY package.json package-lock.json ./
+RUN  npm install --production
 
-# install and cache app dependencies
-COPY package*.json ./
-RUN npm ci --legacy-peer-deps
-RUN npm install react-scripts@4.0.0 -g --silent
-
+FROM node:16.20.1-alpine AS builder
+WORKDIR .
+COPY --from=deps node_modules ./node_modules
 COPY . .
 
-# RUN npm run build
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN npm run build
+
+FROM node:16.20.1-alpine AS runner
+WORKDIR .
+
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+
+# RUN addgroup --system --gid 1001 nodejs
+# RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder --chown=nextjs:nodejs .next ./.next
+COPY --from=builder node_modules ./node_modules
+COPY --from=builder package.json ./package.json
+
+# USER nextjs
+
 EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["npm", "run", "build"]
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
