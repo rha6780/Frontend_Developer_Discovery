@@ -53,7 +53,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 # RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder .next ./.next
-COPY --from=builder ./node_modules ./Frontend_Developer_Discovery/node_modules
+COPY --from=builder node_modules ./node_modules
 COPY --from=builder package.json ./package.json
 
 # USER nextjs
