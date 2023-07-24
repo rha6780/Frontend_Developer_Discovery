@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "@uiw/react-md-editor/markdown-editor.css";
@@ -66,9 +66,10 @@ export const Editor = () => {
             }
             else if (files[0].type == 'image/png' || files[0].type == 'image/jpeg' || files[0].type == 'image/jpg') {
                 const res = await updatePostImage(formdata, headers);
-                setImage(res);
-                const content = markdown + "\n\n ![" + files[0].name + "](http://developerdiscovery.com/media/prod" + uploadImage?.image + ")";
+                const content = markdown + "\n\n ![" + files[0].name + "](http://developerdiscovery.com/media/prod" + res.image + ")";
+
                 setMarkDown(content);
+                setImage(res);
             }
             else {
                 alert("png, jpg, jpeg 파일이 아닙니다.");

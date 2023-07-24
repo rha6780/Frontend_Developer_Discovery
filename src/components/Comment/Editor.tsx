@@ -72,9 +72,10 @@ export const Editor = () => {
             }
             else if (files[0].type == 'image/png' || files[0].type == 'image/jpeg' || files[0].type == 'image/jpg') {
                 const res = await updateCommentImage(id, formdata, headers);
-                setImage(res);
-                const content = markdown + "\n\n ![" + files[0].name + "](http://developerdiscovery.com/media/prod" + uploadImage?.image + ")";
+                const content = markdown + "\n\n ![" + files[0].name + "](http://developerdiscovery.com/media/prod" + res.image + ")";
+
                 setMarkDown(content);
+                setImage(res);
             }
             else {
                 alert("png, jpg, jpeg 파일이 아닙니다.");
