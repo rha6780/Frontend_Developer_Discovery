@@ -9,7 +9,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-
+  minimumCacheTTL: 60,
   // dev 에선 주석처리
   // https://stackoverflow.com/questions/29576341/what-does-the-code-generator-has-deoptimised-the-styling-of-some-file-as-it-e
   webpack: config => {
@@ -20,7 +20,11 @@ const nextConfig = {
       }
     )
     return config
-  }
+  },
+
+  // Django static file serve
+  assetPrefix: '/static/',
+  basePath: '/static/',
 }
 
 // react-md-editor
