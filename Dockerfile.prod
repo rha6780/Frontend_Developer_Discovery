@@ -36,27 +36,29 @@ RUN npm install react-scripts@4.0.0 -g --silent
 
 FROM node:16.20.1-alpine AS builder
 WORKDIR .
-COPY --from=deps node_modules ./node_modules
+
 COPY . .
-
-ENV NEXT_TELEMETRY_DISABLED 1
-
-RUN npm run build
-
-FROM node:16.20.1-alpine AS runner
-WORKDIR .
+COPY --from=deps node_modules ./Frontend_Developer_Discovery/node_modules
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# RUN addgroup --system --gid 1001 nodejs
-# RUN adduser --system --uid 1001 nextjs
+RUN npm run build
 
-COPY --from=builder .next ./.next
-COPY --from=builder node_modules ./node_modules
-COPY --from=builder package.json ./package.json
+# FROM node:16.20.1-alpine AS runner
+# WORKDIR .
 
-# USER nextjs
+# ENV NODE_ENV production
+# ENV NEXT_TELEMETRY_DISABLED 1
+
+# # RUN addgroup --system --gid 1001 nodejs
+# # RUN adduser --system --uid 1001 nextjs
+
+# COPY --from=builder .next ./.next
+# COPY --from=builder node_modules ./node_modules
+# COPY --from=builder package.json ./package.json
+
+# # USER nextjs
 
 EXPOSE 3000
 
