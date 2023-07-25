@@ -68,7 +68,9 @@ export const Comment = (props: any) => {
                 <div className={styles.editor_body}>
                     <MarkDownEditor height={180} value={markdown} onChange={setMarkDown} preview="edit" />
                 </div>
-                <button onClick={updateSubmit}>수정 완료</button>
+                <div className={styles.button_section}>
+                    <button onClick={updateSubmit} className={styles.submit_button}>수정 완료</button>
+                </div>
             </div>
         </div>
     );
