@@ -54,7 +54,7 @@ const Home = () => {
                     <div className={styles.post_title}>{post?.title}</div>
                     <div className={styles.post_sub_data}>
                         <div className={styles.post_date}>작성자: {post?.author.name}</div>
-                        <div className={styles.post_date}>{new Date(post?.created_at!).toLocaleDateString()}</div>
+                        <div className={styles.post_date}>{new Date(post?.created_at!).toLocaleString()}</div>
                     </div>
                 </div>
                 <div>{post?.thumbnail}</div>

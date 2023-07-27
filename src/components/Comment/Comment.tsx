@@ -57,7 +57,7 @@ export const Comment = (props: any) => {
                 <div className={styles.comment_info}>
                     <div className={styles.comment_author}>{props.author.name}</div>
                     <div className={styles.comment_fuction}>
-                        {new Date(props.created_at).toLocaleDateString()}<div className={isAuthor ? '' : styles.disable}> | <a onClick={updateFrom}>수정</a> | <a onClick={deleteSubmit}>삭제</a></div>
+                        {new Date(props.created_at).toLocaleString()}<div className={isAuthor ? '' : styles.disable}> | <a onClick={updateFrom}>수정</a> | <a onClick={deleteSubmit}>삭제</a></div>
                     </div>
                 </div>
                 <div className={styles.comment_content}>
