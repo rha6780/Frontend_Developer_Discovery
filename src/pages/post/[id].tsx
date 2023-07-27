@@ -16,6 +16,7 @@ import { CommentState } from '@/models/Comment';
 import { postDetail } from '@/api/v1/posts/detail';
 import { postDelete } from '@/api/v1/posts/delete';
 import { getUsername } from '@/api/v1/users/current';
+import { postLike } from '@/api/v1/posts/like';
 
 
 export async function getServerSideProps({ params: { id } }: { params: { id: string } }) {
@@ -46,6 +47,11 @@ const Home = () => {
         window.location.assign("/");
     };
 
+    const likePost = async () => {
+        const result = await postLike(id);
+        window.location.reload();
+    }
+
     return (
         <div>
             <NavBar />
@@ -68,6 +74,11 @@ const Home = () => {
                     |
                     <a href={"/post/edit/" + id} type="submit" className={styles.author_button}>
                         수정
+                    </a>
+                </div>
+                <div className={isAuthor ? styles.disable : styles.author_section}>
+                    <a onClick={likePost} className={styles.author_button}>
+                        👍 좋아요({post?.likes})
                     </a>
                 </div>
                 <div><Editor /></div>

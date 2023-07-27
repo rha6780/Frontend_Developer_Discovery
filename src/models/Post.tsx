@@ -7,6 +7,7 @@ export interface PostState {
     content: string;
     thumbnail: string;
     author: string;
+    likes: number;
     created_at: Date;
 }
 
@@ -26,5 +27,6 @@ export interface PostDetailState {
     content: string;
     thumbnail: string;
     created_at: string;
+    likes: number;
     author: Author;
 }
