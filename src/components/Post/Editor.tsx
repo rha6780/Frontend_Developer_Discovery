@@ -19,7 +19,7 @@ const MarkDownEditor = dynamic(() => import("@uiw/react-md-editor"), {
 });
 
 export const Editor = () => {
-    const [markdown, setMarkDown] = useState<string | undefined>("# Hello World");
+    const [markdown, setMarkDown] = useState<string | undefined>("### Hello World");
     const [uploadImage, setImage] = useState<UserImageState>();
 
     const PostSubmit = async (event: any) => {

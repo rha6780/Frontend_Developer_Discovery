@@ -52,7 +52,7 @@ const Home = () => {
             <div className={styles.view_section}>
                 <div className={styles.post_info}>
                     <div className={styles.post_title}>{post?.title}</div>
-                    <div>
+                    <div className={styles.post_sub_data}>
                         <div className={styles.post_date}>{new Date(post?.created_at!).toLocaleDateString()}</div>
                         <div className={styles.post_date}>{post?.author.name}</div>
                     </div>

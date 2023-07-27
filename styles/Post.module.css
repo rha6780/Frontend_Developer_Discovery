@@ -46,6 +46,7 @@
 .post_info {
     border-bottom: solid 1px gainsboro;
     padding: 10px 0px;
+    margin-bottom: 5%;
 }
 
 .post_title {
@@ -53,6 +54,12 @@
     font-family: Verdana;
     font-size: calc(20px + 1vmin);
     padding-bottom: 10px;
+}
+
+.post_sub_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .markdown_section {

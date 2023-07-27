@@ -23,7 +23,7 @@ const MarkDownEditor = dynamic(() => import("@uiw/react-md-editor"), {
 export const Editor = () => {
     const router = useRouter();
     const id = router.query.id || "0";
-    const [markdown, setMarkDown] = useState<string | undefined>("# 로그인하고 댓글을 남겨주세요");
+    const [markdown, setMarkDown] = useState<string | undefined>("### 로그인하고 댓글을 남겨주세요");
     const [uploadImage, setImage] = useState<UserImageState>();
 
 
