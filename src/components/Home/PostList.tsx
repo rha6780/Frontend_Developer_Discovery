@@ -47,7 +47,7 @@ export const PostList = (props: any) => {
                             <a className={styles.post_link} href={"/post/" + post.id}>
                                 <div className={styles.left_item}>
                                     <div className={styles.post_title}>{post.title}</div>
-                                    <div className={styles.post_create_at}>{new Date(post.created_at).toLocaleDateString()}</div>
+                                    <div className={styles.post_create_at}>{new Date(post.created_at).toLocaleString()}</div>
                                     <div className={styles.post_introduction}>{post.content}</div>
                                     {/* <div className={styles.recommended}>{post.content}</div> */}
                                 </div>
