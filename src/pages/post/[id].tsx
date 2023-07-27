@@ -76,7 +76,7 @@ const Home = () => {
                         수정
                     </a>
                 </div>
-                <div className={isAuthor ? styles.disable : styles.author_section}>
+                <div className={styles.author_section}>
                     <a onClick={likePost} className={styles.author_button}>
                         👍 좋아요({post?.likes})
                     </a>
