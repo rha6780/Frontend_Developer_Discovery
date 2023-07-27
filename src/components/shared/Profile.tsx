@@ -94,7 +94,7 @@ const Profile = () => {
                     <div className={styles.profile_container}>
                         <FileDrop
                             onDrop={ImageUpload}>
-                            <img className={styles.profile_img} src={user_data?.image} onError={showDefaultImg} height='150px' width='150px' />
+                            <img className={styles.profile_img} src={"http://developerdiscovery.com/media/prod" + user_data?.image} onError={showDefaultImg} height='150px' width='150px' />
                         </FileDrop>
                     </div>
                     <div className={styles.info}>
